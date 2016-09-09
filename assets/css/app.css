@@ -1,0 +1,373 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  float: left;
+  border: 1px solid #000;
+  border-bottom-width: 0;
+  margin: 3px 3px 0px 3px;
+  padding: 5px 5px 0px 5px;
+  background-color: #CCC;
+  color: #000;
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+}
+
+h2{
+  color: #336699 !important;
+  margin-left:1%;
+}
+
+#mainView {
+  border-top: 1px solid #ddd;
+  clear: both;
+  padding-top:10px;
+}
+#wihthholdRulesTabs ul li,#calendarTabs ul li,#vendorTabs ul li,#wihthholdTypesTabs ul li,
+#wihthholdCodeTabs ul li,.withholdentityTab ul li,.withholdEntityTab1 ul li,#supplierTabs ul li,#infoTabs ul li
+{border:0;background: none;padding-bottom: 5px;color: #0073CF;}
+#wihthholdRulesTabs ul li.active,#vendorTabs ul li.active,#calendarTabs ul li.active , #wihthholdTypesTabs ul li.active,
+#wihthholdCodeTabs ul li.active , .withholdentityTab ul li.active,.withholdEntityTab1 ul li.active,#supplierTabs ul li.active,
+#infoTabs ul li.active{
+  border-bottom:5px solid #0073CF;
+  color: #0073CF;
+}
+.left-buffer {margin-left :30px;}
+
+.top-buffer { margin-top:10px; }
+
+.btn-primary{
+    background-color:  #E37222 !important;
+    border-color: #E37222 !important;;
+}
+
+.calendarClass{
+  padding: 2%;
+}
+
+.calendarsearchTable{
+    width : 40% !important;
+}
+
+.calendarClass .calendardiv1, .calendarClass .calendardiv2{
+  display: inline;
+}
+
+.calendarClass .calendardiv1div,.calendarClass .calendardiv2div{
+  float : left;
+  width : 30%;
+}
+
+.calendarClass .width30{
+  /*width:30%;*/
+}
+
+.periodslabel:before{
+  content:"*" ;
+  color:red;
+}
+
+.calendarClass label{
+  /*padding-left:26px;*/
+  width:165px;
+  display:inline-block;
+}
+
+.calendarClass select{
+  width : 155px;
+}
+
+.calendardiv2,.calendardiv3{
+  width:100%;
+}
+
+.calendardiv2 div {
+  width : 30%;
+  float: left;
+}
+
+.calendardiv3 {
+  margin-top: 2%;
+}
+
+.calendardiv3 input[type=text] , .calendardiv4 textarea{
+  width: 61%;
+}
+
+.withholding .panel{
+  margin-left: 30px;
+}
+
+ .panel-default>.panel-heading, .panel-default>.panel-heading{
+    color: #FFFFFF;
+    background-color: #0073CF;
+}
+
+.rightDiv{
+  float: right;
+}
+
+.leftDiv{
+  float: left;
+  margin-left: 2%;
+}
+
+.calendarClass .glyphicon-plus , .calendarClass .glyphicon-minus{
+  cursor: pointer;
+}
+
+.withholding .withholdingDiv{
+  margin-left:10%;
+}
+
+.withholdinginnerDiv{
+  display: inline-block;
+  width: 100%;
+}
+
+.withholdinginnerDiv div{
+  width: 30%;
+  float :left;
+}
+
+.withholding label {
+  padding-left: 26px;
+  width: 135px;
+  display: inline-block;
+  text-align: right;
+  margin-right: 50px;
+}
+
+.withholding .withholdingDiv label{
+  width : 165px;
+}
+
+.withholding  .btn{
+  font-size: 13px;
+}
+
+.withholdinginnerDiv input[type=text]{
+  text-align: right;
+}
+
+
+/*Navigation*/
+.navigation a{
+  width : 100%;
+  display : block;
+  padding:10px;
+}
+
+.navigation a.active, .navigation a:hover{
+    background-color: #0e364d !important;
+    color: #ffffff;
+    text-decoration: none;
+}
+.navigation{
+    background-color: #f9fafb;
+    border-right: 1px solid #e4ebf1;
+    height:calc(100vh - 70px);
+    overflow: hidden;
+    overflow-y:auto;
+}
+
+.navigation a{
+    color: #7f96a3;
+}
+
+.logo{
+  height : 70px;
+  border-bottom:1px solid #e4ebf1;
+}
+
+.mainContent{
+  padding-left : 0px!important;
+    height:calc(100vh - 70px);
+    overflow: hidden;
+    overflow-y:auto ;
+  /*border-left:3px solid #336699;*/
+}
+/* vendor Category Css
+*/
+
+.vendorCategory .panel-default>.panel-heading,.vendorCategory .panel-default>.panel-heading,
+.withholdType .panel-default>.panel-heading,.withholdType .panel-default>.panel-heading,
+.withholdCode .panel-default>.panel-heading,.withholdCode .panel-default>.panel-heading{
+  color: #FFFFFF;
+  background-color: #0073CF;
+}
+
+table th{
+    color: #FFFFFF;
+    background-color: #0073CF;
+}
+
+.vendorCategory th, .vendorCategory td,
+.calendarClass th,.calendarClass td,
+.withholding th,.withholding td,
+.withholdType th, .withholdType td,
+.withholdCode th, .withholdCode td{
+  border-right:1px solid #8cb3d9;
+}
+
+
+.vendorCategory label , .withholdType label,.withholdCode label{
+  width : 180px;
+}
+
+.vendorCategory .vendorCategoryDiv span{
+  margin-right: 40px;
+}
+
+.withholdingclassTR .desc input[type=text]{
+    width : 300px;
+}
+
+.panel-body{
+  padding : 0px!important;
+}
+
+.table{
+  margin-bottom:20px !important;
+    border: 1px solid #ddd;
+}
+
+.vendorCategory , .withholdType , .withholdCode{
+  margin-left: 1%;
+}
+
+.vendorCategory h2 ,.withholdType h2 , .withholdCode h2{
+  margin-left : 0%;
+}
+
+a,#calendarTabs ul li{
+    cursor: pointer;
+}
+
+/* payer's data
+*/
+
+.payerdata{
+  padding: 2%;
+}
+
+.payerdata .col-md-8{
+    padding:0px !important;
+}
+/*
+ .panel-default>.panel-heading, .panel-default>.panel-heading{
+    color: #FFFFFF;
+    background-color: #8cb3d9;
+}*/
+
+.payerdata .padding{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.payerdata .removePadding{
+    padding : 0px !important;
+}
+
+table.Details-period tbody tr td{position:relative;}
+table.Details-period tbody tr td .calendar-new{position:absolute;right:40px;top:8px;display: block;}
+.no-pad{padding:0;}
+.ngdialog{
+    /*background:rgba(0,0,0, .7);*/
+    z-index: 99999999;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+#myModal{
+    opacity: 1;
+    width: 780px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+#firstcolumn{
+    margin-left: -89px !important;
+}
+.withholding #secondcolumn{
+    margin-top: -47px !important;
+    margin-left: 61px;
+}
+.withholding #thirdcolumn{
+    margin-top: -49px;
+    margin-left: 161px;
+}
+.withholding #fourthcolumn{
+    margin-top: -23px;
+    margin-left: 361px;
+}
+.withholding #fifthcolumn{
+    margin-top: -46px;
+    margin-left: 561px;
+}
+
+
+#mainView1 {
+    border-top: 1px solid #8cb3d9;
+    border-top-width: thick;
+    clear: both;
+    padding-top:10px;
+}
+
+
+.paymentPost .panel, .postwithHolding .panel,.VoucherCls .panel{
+    margin-left: 10px;
+}
+.paymentPost label, .postwithHolding label{
+    width: 180px;
+    text-align: right;
+    margin-right: 10px;
+    padding-bottom: 5px;
+}
+.paymentPost select,.postwithHolding select{
+    width: 240px;
+}
+.reportCls a{
+    margin-left: 05%;
+}
+.rightbuffer{
+    margin-left: 05%;
+}
+/* postwithHolding */
+
+.postwithHolding .postwithholddata label{
+    width: 200px;
+    text-align: right;
+    margin-right: 10px;
+    padding-bottom: 5px;
+}
+
+/* 1099 Vouchers*/
+.hrCls{
+    padding-bottom: 1%;
+}
+.toppadCls{
+    padding-top: 1%;
+}
+.postCls{
+    padding-left: 40%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.addSpaceCls{
+    margin-right: 10px;
+}
+.VoucherCls label{
+    width: 140px;
+}
+.labelCls label{
+    width: 250px;
+    text-align: left;
+}
+ .invalid {
+    color:red;
+}

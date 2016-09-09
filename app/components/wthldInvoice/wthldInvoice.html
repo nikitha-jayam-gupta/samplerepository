@@ -1,0 +1,120 @@
+<div class="VoucherCls" ng-controller="withholdInvoice">
+    <h2>Withholding Invoice Line Update</h2>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Vendor</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 toppadCls">
+                <div class="col-md-4"><label>Vendor SetID:</label><span></span> </div>
+                <div class="col-md-4"><label>Vendor Name:</label><span></span></div>
+            </div>
+            <div class="col-md-12 toppadCls hrCls">
+                <div class="col-md-4"><label>Vendor ID:</label><span></span></div>
+                <div class="col-md-4"><label>Location:</label><span></span></div>
+                <div class="col-md-4"><label>Withholding:</label><span></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Criteria</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 toppadCls">
+                <div class="col-md-4"><label>Business Unit:</label><input type="text" size="05"> </div>
+                <div class="col-md-4"><label>From Date:</label><input type="text" size="05"></div>
+                <div class="col-md-4"><button class="btn btn-primary" ng-click="run()">Search</button> </div>
+            </div>
+            <div class="col-md-12 toppadCls hrCls">
+                <div class="col-md-4"><input type="checkbox">Clear Updated Withholding </div>
+                <div class="col-md-4"><label>To Date:</label><input type="test" size="05"></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Defaults</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 toppadCls">
+                <div class="col-md-4"><label>Withhold Entity:</label><input type="text" size="05"> </div>
+                <div class="col-md-4"><label>Withhold Type:</label><input type="text" size="05"></div>
+                <div class="col-md-4"><button class="btn btn-primary btnWidthCls" ng-click="run()">Set All lines to No Wthd</button> </div>
+            </div>
+            <div class="col-md-12 toppadCls hrCls">
+                <div class="col-md-4"><label>Jurisdiction:</label><input type="text" size="05"> </div>
+                <div class="col-md-4"><label>Class:</label><input type="test" size="05"></div>
+                <div class="col-md-4"><button class="btn btn-primary btnWidthCls" ng-click="run()">Set All lines to Wthd</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Tax Reporting Year</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 toppadCls hrCls">
+                <div class="col-md-4"><label>Start Date:</label><input type="date"> </div>
+                <div class="col-md-4"><label>End Date:</label><input type="date"></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Adjustments</h3>
+        </div>
+        <div class="panel-body">
+            <div id="witholdInvoiceTabs">
+                <ul>
+                    <li ng-repeat="tab in witholdInvoiceTabs"
+                        ng-class="{active:isActiveTab(tab.url)}"
+                        ng-click="onClickTab(tab)">{{tab.title}}</li>
+                </ul>
+                <div id="witholdTabView">
+                    <div ng-include="currentTab"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/ng-template" id="add.current">
+        <table class="table">
+            <thead>
+            <th></th>
+            <th>Current Withhold</th>
+            <th>New Withhold</th>
+            <th>Entity</th>
+            <th>Type</th>
+            <th>Jurisdiction</th>
+            <th>Class</th>
+            <th>Business Unit</th>
+            <th>Voucher</th>
+            <th>Line</th>
+            <th>Invoice</th>
+            <th>Payment Date</th>
+            <th>Merchandise Amt</th>
+            </thead>
+            <tbody>
+
+            <tr>
+                <td>1</td>
+                <td><input type="checkbox"> </td>
+                <td><select><option>HCM</option></select></td>
+                <td><input type="text" size="05"> </td>
+                <td><input type="text" size="05"></td>
+                <td><input type="text" size="05"></td>
+                <td><input type="text" size="05"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </script>
+    <script type="text/ng-template" id="add.newvalue">
+    </script>
+</div>

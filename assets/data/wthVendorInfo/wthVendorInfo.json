@@ -1,0 +1,10 @@
+
+  {
+    "setID" : "HU001",
+    "location" : "REMIT",
+    "vendorID":"0000000001",
+    "vendorLocation" : "California",
+    "shortVendorName" : "XYZ",
+    "description":"FED",
+    "name" : "12 of US Coperative Association"
+  }

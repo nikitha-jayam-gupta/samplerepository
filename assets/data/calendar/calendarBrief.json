@@ -1,0 +1,29 @@
+[
+  {
+    "setID" : "SHARE",
+    "CalendarID":"01",
+    "FiscalYear" : "2012",
+    "Description" : "Monthly"
+  },
+  {
+    "setID" : "SHARE",
+    "CalendarID":"01",
+    "FiscalYear" : "2013",
+    "Description" : "Monthly"
+  },{
+  "setID" : "SHARE",
+  "CalendarID":"01",
+  "FiscalYear" : "2014",
+  "Description" : "Monthly"
+},{
+  "setID" : "SHARE",
+  "CalendarID":"01",
+  "FiscalYear" : "2015",
+  "Description" : "Monthly"
+},{
+  "setID" : "SHARE",
+  "CalendarID":"01",
+  "FiscalYear" : "2016",
+  "Description" : "Monthly"
+}
+]

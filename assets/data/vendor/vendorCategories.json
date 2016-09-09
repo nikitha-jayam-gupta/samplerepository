@@ -1,0 +1,34 @@
+[
+  {
+    "withholdingType" : "1099",
+    "Description" : "1099 Withholding"
+  },
+  {
+    "withholdingType" : "1099G",
+    "Description" : "Certain Government Payments"
+  },{
+  "withholdingType" : "1099I",
+  "Description" : "Interest Income"
+},{
+  "withholdingType" : "281.5",
+  "Description" : "Fiches 281.50 Belgique"
+},{
+  "withholdingType" : "CIS",
+  "Description" : "Construction Industry Scheme"
+},{
+  "withholdingType" : "CIS07",
+  "Description" : "Construction Ind. Scheme 2007"
+},{
+  "withholdingType" : "DAS2",
+  "Description" : "French Withholding"
+}
+,{
+  "withholdingType" : "INDTD",
+  "Description" : "India Income Tax TDS"
+},{
+  "withholdingType" : "INDWC",
+  "Description" : "India Works Cont. Tax"
+}
+]
+
+

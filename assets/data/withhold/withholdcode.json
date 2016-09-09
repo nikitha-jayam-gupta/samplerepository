@@ -1,0 +1,43 @@
+[
+  {
+    "setID" : "SHARE",
+    "WithholdCode" : "01",
+    "Description":"Rents"
+  },
+  {
+    "setID" : "SHARE",
+    "WithholdCode" : "02",
+    "Description":"Royalties"
+  }
+,
+  {
+    "setID" : "SHARE",
+    "WithholdCode" : "03",
+    "Description":"Prizes, Awards, etc."
+  },
+  {
+    "setID" : "SHARE",
+    "WithholdCode" : "04",
+    "Description":"Federal Income Tax Withheld"
+  },
+  {
+    "setID" : "SHARE",
+    "WithholdCode" : "05",
+    "Description":"Fishing Boat Proceeds"
+  },
+  {
+    "setID" : "SHARE",
+    "WithholdCode" : "06",
+    "Description":"Medical and Health Care Pymnts"
+  },
+  {
+    "setID" : "SHARE",
+    "WithholdCode" : "07",
+    "Description":"Non-Employee Compensation"
+  },
+  {
+    "setID" : "SHARE",
+    "WithholdCode" : "08",
+    "Description":"Substitute Payments"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "bUnit" : "0000039332",
+    "vID" : "REMIT",
+    "paymentCount":"Y",
+    "entity" : "IRS",
+    "newType" : "1099",
+    "newJurCD":"FED",
+    "newClass" : "07",
+    "newRule":"FED",
+    "newType":"FED",
+    "newAmount":"50000",
+    "basicAmount":"10000"
+  },
+  {
+    "bUnit" : "0000039331",
+    "vID" : "REMIT",
+    "paymentCount":"Y",
+    "entity" : "IRS",
+    "newType" : "1099",
+    "newJurCD":"FED",
+    "newClass" : "07",
+    "newRule":"FED",
+    "newType":"FED",
+    "newAmount":"50000",
+    "basicAmount":"10000"
+  }
+]

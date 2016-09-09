@@ -1,0 +1,80 @@
+[
+  {
+    "class" : "01",
+    "Description" : "Rents",
+    "contractReference":"false",
+    "Active" : "true"
+  },
+  {
+    "class" : "02",
+    "Description" : "Royalties",
+    "contractReference":"false",
+    "Active" : "true"
+  },
+  {
+    "class" : "03",
+    "Description" : "Prizes , Awards etc",
+    "contractReference":"false",
+    "Active" : "true"
+  },
+  {
+    "class" : "04",
+    "Description" : "Federal Income Tax withheld",
+    "contractReference":"false",
+    "Active" : "true"
+  },
+  {
+    "class" : "05",
+    "Description" : "Fishing Boat Proceeds",
+    "contractReference":"false",
+    "Active" : "true"
+  },
+  {
+    "class" : "06",
+    "Description" : "Medical and Health Care Payments",
+    "contractReference":"false",
+    "Active" : "true"
+  },
+  {
+    "class" : "07",
+    "Description" : "Non Employee Compensation",
+    "contractReference":"false",
+    "Active" : "true"
+  },
+  {
+    "class" : "08",
+    "Description" : "Substitute Payments",
+    "contractReference":"false",
+    "Active" : "true"
+  },
+  {
+    "class" : "10",
+    "Description" : "Crop Insurence Proceeds",
+    "contractReference":"false",
+    "Active" : "true"
+  },
+  {
+    "class" : "13",
+    "Description" : "Excess Golden parachute pyments",
+    "contractReference":"false",
+    "Active" : "true"
+  },
+  {
+    "class" : "14",
+    "Description" : "Gross Attorney Proceeds",
+    "contractReference":"false",
+    "Active" : "true"
+  },
+  {
+    "class" : "15A",
+    "Description" : "Section 409A deferrals",
+    "contractReference":"false",
+    "Active" : "true"
+  },{
+  "class" : "15B",
+  "Description" : "Section 409A income",
+  "contractReference":"false",
+  "Active" : "true"
+}
+
+]

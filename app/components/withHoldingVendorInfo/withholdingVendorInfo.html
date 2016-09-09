@@ -1,0 +1,109 @@
+<div class="whinfo" ng-controller="whVInfoCtrl">
+    <h2>Withholding Information</h2>
+    <div class="whinfo1div">
+     <div>
+        <label>SetID:</label> <input type="text" value="{{vendorinfoData.setID}}">
+     </div>
+     <div class>
+        <label>Location:</label> <input type="text" value="{{vendorinfoData.location}}">
+     </div>
+    </div>
+    <div class="whinfo2div">
+        <div>
+            <label>VendorID:</label> <input type="text" value="{{vendorinfoData.vendorID}}">
+        </div>
+        <div class>
+            <label>Vendor Location:</label> <input type="text" value="{{vendorinfoData.vendorLocation}}">
+        </div>
+    </div>
+    <div class="whinfo3div">
+        <div>
+            <label>Short Vendor Name:</label> <input type="text" value="{{vendorinfoData.shortVendorName}}">
+        </div>
+        <div class>
+            <label>Description:</label> <input type="text" value="{{vendorinfoData.description}}">
+        </div>
+    </div>
+    <div class="whinfo4div">
+        <div>
+            <label>Name:</label> <input type="text" value="{{vendorinfoData.name}}">
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <br>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">1099 Options</h3>
+        </div>
+    </div>
+    <div class="panel panel-default innerPanel">
+        <div class="panel-heading">
+            <h3 class="panel-title">1099 Information</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                <th>Entity</th>
+                <th>Type</th>
+                <th>Jurisdiction</th>
+                <th>Default Jurisdiction </th>
+                <th>Default Class</th>
+                <th>1099 Status</th>
+                <th>Withhold Type Description</th>
+                <th> </th>
+                <th></th>
+                </thead>
+                <tbody>
+                    <td><input type="text"> </td>
+                    <td><input type="text">  </td>
+                    <td><input type="text"> </td>
+                    <td><input type="checkbox"> </td>
+                    <td><input type="text">  </td>
+                    <td><input type="text"> </td>
+                    <td><input type="text">  </td>
+                    <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                    <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)"></i></td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="panel panel-default innerPanel">
+        <div class="panel-heading">
+            <h3 class="panel-title">1099 Reporting Information</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                <th>Entity</th>
+                <th>Address</th>
+                <th>Tin Type</th>
+                <th>Taxpayer Identification Number </th>
+                <th>Gender</th>
+                <th>Date of Birth</th>
+                <th>Birth Location</th>
+                <th>Number of Children </th>
+                <th>Company</th>
+                <th></th>
+                <th></th>
+                </thead>
+                <tbody>
+                    <td><input type="text"> </td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"> </td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                    <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)"></i></td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-primary">Save</button>
+    </div>
+</div>

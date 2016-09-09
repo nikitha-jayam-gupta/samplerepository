@@ -1,0 +1,47 @@
+[
+  {
+    "bUnit" : "HU001",
+    "vID" : "00305503",
+    "invoiceNumber":"STPAKUMAKA012214",
+    "invoiceDate" : "01/22/2014",
+    "entity" : "IRS",
+    "newType":"1099",
+    "jurisdiction":"FED"
+  },
+  {
+    "bUnit" : "HU001",
+    "vID" : "00305509",
+    "invoiceNumber":"REIMAKUMAKA020714",
+    "invoiceDate" : "02/07/2014",
+    "entity" : "IRS",
+    "newType":"1099",
+    "jurisdiction":"FED"
+  },
+  {
+    "bUnit" : "HU001",
+    "vID" : "00307431",
+    "invoiceNumber":"STPAKUMAKA022614",
+    "invoiceDate" : "02/26/2014",
+    "entity" : "IRS",
+    "newType":"1099",
+    "jurisdiction":"FED"
+  },
+  {
+    "bUnit" : "HU001",
+    "vID" : "00312161",
+    "invoiceNumber":"STPAKUMAKA040114",
+    "invoiceDate" : "04/01/2014",
+    "entity" : "IRS",
+    "newType":"1099",
+    "jurisdiction":"FED"
+  },
+  {
+    "bUnit" : "HU001",
+    "vID" : "00328800",
+    "invoiceNumber":"@02661055-0000332368",
+    "invoiceDate" : "10/20/2014",
+    "entity" : "IRS",
+    "newType":"1099",
+    "jurisdiction":"FED"
+  }
+]

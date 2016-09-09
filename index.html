@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <script src="app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+
+<!-- The navigation menu will get the value of the "active" variable as a class.
+     The $event.preventDefault() stops the page from jumping when a link is clicked. -->
+
+<div class="col-lg-12 logo text-center">
+  <img src="assets/images/trinetLogo.png">
+</div>
+
+<div>
+<div class="">
+  <nav class="navigation col-md-2">
+    <a href="#calendarurl">Calendar Periods   </a>
+    <a href="#withholdRule">Withhold Rule </a>
+    <a href="#vendor">Vendor Category </a>
+    <a href="#withholdCode">Withholding Code</a>
+    <a href="#withholdType">Withhold Type </a>
+    <a href="#withholdEntity">Withholding Entity</a>
+    <a href="#payerdata">Payer Data </a>
+    <a href="#withholdingVInfo">Withholding Vendor Info </a>
+    <a href="#wvendorUpdate">Withholding Vendor Update </a>
+    <a href="#withholdEntity">Withholding Entities</a>
+    <a href="#supplierInfo">Supplier Information</a>
+    <a href="#paymentPost">Payment Posting </a>
+    <a href="#postWithHolding">Post Withholdings</a>
+    <a href="#postupdate">Withholding Update Process</a>
+    <a href="#withholdsent">Run Sent file Process</a>
+    <a href="#1099vouchers">1099 Withholding Vouchers</a>
+    <a href="#venderVouchers">Vouchers by Vendor</a>
+    <a href="#paymentsInquiry">Withholding Payments Inquiry</a>
+    <a href="#vendorClass">Vendor By Class</a>
+    <a href="#wthldAdjustments">Manual Adjustments(Withhold Adjustments)</a>
+    <a href="#wthldInvoice">Withholding Invoice Line Update</a>
+    <a href="#wthldReport">Withhold 1099 Report</a>
+  </nav>
+</div>
+<!-- ng-show will show an element if the value in the quotes is truthful,
+     while ng-hide does the opposite. Because the active variable is not set
+     initially, this will cause the first paragraph to be visible. -->
+
+
+
+<div ng-app="TabsApp" class="mainContent col-md-10">
+  <ng-view></ng-view>
+</div>
+</div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/ui-grid.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="app/bower_components/angular/angular.js"></script>
+  <script src="app/angular-route.js"></script>
+  <script type="text/javascript" src="app/ui-grid.min.js"></script>
+<!--<script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.js"></script>
+<`script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>-->
+  <script src="app/app.js"></script>
+  <script src="app/components/calendar/calendarCtrl.js"></script>
+  <script src="app/components/withholdRule/withholdRuleCtrl.js"></script>
+  <script src="app/components/vendorCategories/vendorcategoryCtrl.js"></script>
+  <script src="app/components/withholdType/withholdType.js"></script>
+  <script src="app/components/searchwthldCode/searchwthldCode.js"></script>
+  <script src="app/components/vendorUpdate/wthdvendorupdatectrl.js"></script>
+  <script src="app/components/withHoldEntity/withHoldEntityCtrl.js"></script>
+  <script src="app/components/supplier/SupplierInfoCtrl.js"></script>
+  <script src="app/components/paymentPost/paymentPostCtrl.js"></script>
+  <script src="app/components/postWithHolding/postWithHoldingCtrl.js"></script>
+  <script src="app/components/1099Vouchers/1099VouchersCtrl.js"></script>
+  <script src="app/components/vendorVouchers/vendorVouchersCtrl.js"></script>
+  <script src="app/components/paymentsInquiry/paymentsInquiryCtrl.js"></script>
+  <script src="app/components/withHoldingVendorInfo/withholdingVendorInformationCtrl.js"></script>
+  <script src="app/components/wthldInvoice/wthldInvoiceCtrl.js"></script>
+  <script src="app/components/withholdCode/withholdCodeCtrl.js"></script>
+  <script src="app/components/vendorClass/vendorClassCtrl.js"></script>
+  <script src="app/components/wthldAdjustments/wthldAdjustmentsCtrl.js"></script>
+  <script src="app/components/withHoldEntity/withHoldEntityCtrl.js"></script>
+  <script src="app/components/wthldReport/wthldReportCtrl.js"></script>
+  <script src="app/components/version/version.js"></script>
+  <script src="app/components/version/version-directive.js"></script>
+  <script src="app/components/version/interpolate-filter.js"></script>
+  <script src="assets/lib/angular-daterangepicker.js"></script>
+  <script src="assets/lib/ui-bootstrap-tpls-0.13.0.js"></script>
+  <script src="assets/lib/datePickerCtrl.js"></script>
+  <script src="assets/lib/ngDialog.min.js"></script>
+</body>
+</html>
+
+
+

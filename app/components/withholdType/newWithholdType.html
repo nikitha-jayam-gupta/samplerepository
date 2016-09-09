@@ -1,0 +1,50 @@
+<h2>Withhold Type</h2>
+<br>
+<div class="vendorCategoryDiv">
+    <div>
+        <label>Withholding Type:</label><span><input type="text" value="{{data.withholdingType}}"></span>
+    </div>
+    <div>
+        <label>Description:</label><input style="width: 200px" type="text" value="{{data.Description}}">
+    </div>
+</div>
+<br>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title"><span class="glyphicon glyphicon-triangle-bottom"></span>&nbsp; Withholding Class</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+            <th> Class</th>
+            <th> Description</th>
+            <th style="width: 154px"> Contract Reference</th>
+            <th> Active</th>
+            <th> </th>
+            <th> </th>
+            </thead>
+            <tbody>
+
+            <tr class="withholdingclassTR" ng-repeat="wthData in withholdTypeData" ng-show="!newTabClicked">
+                <td style="width: 100px;"><input type="text" value="{{wthData.class}}"> </td>
+                <td class="desc"><input type="text" value="{{wthData.Description}}"> </td>
+                <td><input type="checkbox" checked="{{wthData.contractReference}}">  </td>
+                <td><input type="checkbox" checked="{{wthData.Active}}">  </td>
+                <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)"></i></td>
+            </tr>
+            <tr class="withholdingclassTR" ng-show="newTabClicked">
+                <td><input type="text" value="{{wthData.class}}"> </td>
+                <td class="desc"><input type="text" value="{{wthData.Description}}"> </td>
+                <td><input type="checkbox" checked="{{wthData.contractReference}}">  </td>
+                <td><input type="checkbox" checked="{{wthData.Active}}">  </td>
+                <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)"></i></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <button class="btn btn-primary" ng-click="withholdClick('')" ng-if="!newTabClicked">Return To Search</button>
+    </div>
+</div>

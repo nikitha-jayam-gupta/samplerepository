@@ -1,0 +1,11 @@
+[
+  {
+    "Entity" : "IRS",
+    "Type" : "1099",
+    "WithholdDesc":"1099 Withholding",
+    "Jurisdiction" : "FED",
+    "JurDesc" : "Federal",
+    "Class" : "01",
+    "Desc" : "Rents"
+  }
+]

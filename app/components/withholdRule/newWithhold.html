@@ -1,0 +1,93 @@
+
+    <h2>Withhold Rule</h2>
+    <div class="withholdingDiv">
+        <div>
+            <label>Withholding Rule:</label><span>{{data.withholdingRule}}</span>
+        </div>
+        <div>
+            <label>Description:</label><input type="text" value="{{data.Description}}">
+        </div>
+    </div>
+    <br>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-triangle-bottom"></span>&nbsp; Rule Information</h3>
+        </div>
+        <br>
+        <div class="panel-body">
+            <div class="withholdinginnerDiv">
+                <div>
+                    <label class="periodslabel"> Effective Date:</label><input type="text">
+                </div>
+                <div>
+                    <label class="periodslabel"> Status:</label><select><option>--Select one--</option></select>
+                </div>
+                <div>
+                    <label>Description:</label><input type="text">
+                </div>
+            </div>
+            <div class="withholdinginnerDiv">
+                <div>
+                    <label > Surcharge %:</label><input type="text" value="0.00">
+                </div>
+                <div>
+                    <label > Additional Surcharge %:</label><input type="text" value="0.00">
+                </div>
+                <div>
+                    <label > Additional Cess %:</label><input type="text" value="0.00">
+                </div>
+            </div>
+            <div class="withholdinginnerDiv">
+                <div>
+                    <label > Flat Rate%:</label><input type="text">
+                </div>
+                <div>
+                    <label > Rate in Force %:</label><input type="text">
+                </div>
+                <div>
+                    <label > Cumm Threshold %:</label><input type="text">
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-triangle-bottom"></span>&nbsp; Rule Details</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <th>From Basic Amount</th>
+                        <th>To Basic Amount</th>
+                        <th>Percent Withheld</th>
+                        <th>Additional Amount</th>
+                        <th> </th>
+                        <th> </th>
+                        </thead>
+                        <tbody>
+
+                        <tr ng-repeat="wData in withholdData" ng-show="!newTabClicked">
+                            <td><input type="text" value="{{wData.FromBasicAmt}}"></td>
+                            <td><input type="text" value="{{wData.ToBasicAmt}}"> </td>
+                            <td><input type="text" value="{{wData.PercentWithheld}}">  </td>
+                            <td><input type="text" value="{{wData.AdditionalAmt}}"> </td>
+                            <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                            <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)" ></i></td>
+                        </tr>
+                        <tr ng-show="newTabClicked" >
+                            <td><input type="text" value="{{wData.FromBasicAmt}}"> </td>
+                            <td><input type="text" value="{{wData.ToBasicAmt}}"> </td>
+                            <td><input type="text" value="{{wData.PercentWithheld}}">  </td>
+                            <td><input type="text" value="{{wData.AdditionalAmt}}"> </td>
+                            <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                            <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)" ></i></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rightDiv">
+        <button class="btn btn-primary"><i class="glyphicon glyphicon-open-file"></i>  Save </button>
+        <button class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i>  Clear</button>
+        <button class="btn btn-primary" ng-click="withholdClick('')" ng-if="!newTabClicked">Return To Search</button>
+    </div>

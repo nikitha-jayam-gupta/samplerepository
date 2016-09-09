@@ -1,0 +1,52 @@
+[
+  {
+    "controlID" : "00077",
+    "languageCode" : "English",
+    "bUnit":"0000039332",
+    "Description":"To generate the Withholding reports"
+  },
+  {
+    "controlID" : "000777",
+    "languageCode" : "English",
+    "bUnit":"0000031202",
+    "Description":"To generate the Withholding reports"
+  },{
+    "controlID" : "0011",
+    "languageCode" : "English",
+    "bUnit":"0000031023",
+    "Description":"To generate the Withholding reports"
+},{
+    "controlID" : "00110",
+    "languageCode" : "English",
+    "bUnit":"0000031089",
+    "Description":"To generate the Withholding reports"
+},{
+    "controlID" : "001100",
+    "languageCode" : "English",
+    "bUnit":"0000031895",
+    "Description":"To generate the Withholding reports"
+},{
+    "controlID" : "007",
+    "languageCode" : "English",
+    "bUnit":"0000031684",
+    "Description":"To generate the Withholding reports"
+},{
+    "controlID" : "0070",
+    "languageCode" : "English",
+    "bUnit":"0000032019",
+    "Description":"To generate the Withholding reports"
+}
+,{
+    "controlID" : "0077",
+    "languageCode" : "English",
+    "bUnit":"0000033684",
+    "Description":"To generate the Withholding reports"
+},{
+    "controlID" : "0321",
+    "languageCode" : "English",
+    "bUnit":"0000031986",
+    "Description":"To generate the Withholding reports"
+}
+]
+
+

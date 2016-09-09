@@ -1,0 +1,22 @@
+[
+  {
+    "vendorId" : "0000039332",
+    "location" : "REMIT",
+    "newWithhold":"Y",
+    "entity" : "IRS",
+    "newType" : "1099",
+    "newJurCD":"FED",
+    "newClass" : "07",
+    "criteria":"Database Updated"
+  },
+  {
+    "vendorId" : "0000039332",
+    "location" : "REMIT",
+    "newWithhold":"Y",
+    "entity" : "IRS",
+    "newType" : "1099",
+    "newJurCD":"FED",
+    "newClass" : "07",
+    "criteria":"Database Updated"
+  }
+]

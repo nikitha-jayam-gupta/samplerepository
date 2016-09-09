@@ -1,0 +1,862 @@
+<div class="supplier" ng-controller="supplierCtrl">
+    <div id="supplierTabs" ng-if="supplierVisibility">
+        <ul>
+            <li ng-repeat="tab in supplierTabs"
+                ng-class="{active:isActiveTab(tab.url)}"
+                ng-click="onClickTab(tab)">{{tab.title}}</li>
+        </ul>
+        <div id="mainView">
+            <div ng-include="currentTab"></div>
+        </div>
+    </div>
+    <script type="text/ng-template" id="add.existing">
+        <div class="panel panel-default" ng-if="supplierVisibility">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span class="glyphicon glyphicon-triangle-bottom"></span>&nbsp; Search Criteria</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12 top-buffer"><lable class="col-md-2">Supplier Name:</lable><input class="col-md-2" ng-model="suppliername" type="text"> </div>
+
+                <div class="left-buffer">
+                    <button class="btn btn-primary top-buffer" ng-click="totalSearch()">Search</button>
+                    <button class="btn btn-primary top-buffer" ng-click="clear()">Clear</button>
+                </div>
+                <br>
+                <br>
+                <table class="table left-buffer col-md-4 supplierSearchTable" ng-if="supplierFlag">
+                    <thead>
+                        <th> SetID </th>
+                        <th> Supplier ID </th>
+                        <th> Persistence </th>
+                        <th> Short Supplier Name </th>
+                        <th> Our Customer Number </th>
+                        <th> Supplier Name </th>
+                        </thead>
+                    <tbody>
+
+                    <tr ng-repeat="sData in supplierData | filter : {supplierName : suppliername }">
+                        <td><a href="" ng-click="supplierDetailsPage(sData)">{{sData.setID}}</a> </td>
+                        <td>{{sData.supplierID}}</td>
+                        <td>{{sData.persistence}}</td>
+                        <td>{{sData.shortSupplierName}}</td>
+                        <td>{{sData.customerNumber}}</td>
+                        <td>{{sData.supplierName}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </script>
+    <script type="text/ng-template" id="add.newvalue">
+
+    </script>
+
+    <div class="supplierdetails" ng-if="!supplierVisibility">
+        <div id="infoTabs">
+            <ul>
+                <li ng-repeat="tab in infoTabs"
+                    ng-class="{active:isActiveTab(tab.url)}"
+                    ng-click="onClickTab(tab)">{{tab.title}}</li>
+            </ul>
+            <div id="mainView1">
+                <div ng-include="activeTab"></div>
+            </div>
+        </div>
+        <script type="text/ng-template" id="add.summary">
+            <div class="supplierSummaryDiv">
+                <div class="col-md-12">
+                    <div class="col-md-4"><label >SetID</label><span>{{sData.setID}}</span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4"><label >Supplier ID</label><span>{{sData.supplierID}}</span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4"><label >Supplier Support Name</label><span>{{sData.shortSupplierName}}</span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4"><label>Supplier Name</label><span>{{sData.supplierName}}</span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4"><label>Order</label><span>{{sData.order}}</span></div>
+                    <div class="col-md-4"><label class="middlespace">Remit To</label><span>{{sData.remitTo}}</span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4"><label>Status</label><span>{{sData.status}}</span></div>
+                    <div class="col-md-4"><label class="middlespace">Last Modified By</label><span>{{sData.lmodifiedBy}}</span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4"><label>Persistence</label><span>{{sData.persistence}}</span></div>
+                        <div class="col-md-4"><label class="middlespace">Last Modified Date</label><span>{{sData.lmodifiedDate}}</span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4"><label>Classification</label><span>{{sData.classification}}</span></div>
+                        <div class="col-md-4"><label class="middlespace">Created By</label><span>{{sData.createdBy}}</span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4"><label>HCM Class</label><span>{{sData.hcmClass}}</span></div>
+                        <div class="col-md-4"><label class="middlespace">Created Date/time</label><span>{{sData.cdate}}</span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4"><label>Open for Ordering </label><span>{{sData.ordering}}</span></div>
+                    <div class="col-md-4"><label class="middlespace">Last Activity Date</label><span>{{sData.lactivityDate}}</span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4"><label>Withholding</label><span>{{sData.withholding}}</span></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4"><label>VAT</label><span>{{sData.vat}}</span></div>
+                </div>
+            </div>
+            <div class="left-buffer">
+                <button class="btn btn-primary top-buffer" ng-click="returntoSearch()"> Return to Search</button>
+            </div><br>
+        </script>
+
+        <script type="text/ng-template" id="add.information">
+            <div class="supplierInfoDiv">
+                <div>
+                    <label >SetID</label><span>{{sData.setID}}</span>
+                    <label class="periodslabel middlespaces ">Supplier Name</label><span>{{sData.supplierName}}</span>
+                </div>
+                <div>
+                    <label >Supplier ID</label><span>{{sData.supplierID}}</span>
+                    <label class="middlespaces">Additional Name</label><span>{{sData.supplierName}}</span>
+                </div>
+                <div>
+                    <label class="periodslabel">Supplier Support Name</label><span>{{sData.shortSupplierName}}</span>
+                    <input type="checkbox" ng-model="withholding" style="margin-left: 27%;">Withholding
+                </div>
+                <div>
+                    <label class="periodslabel">Classification</label>
+                    <select ng-model="classification">
+                        <option value="outsideparty">Outside Party
+                        <option value="hcm">HCM
+                        <option value="employee">Employee
+                        <option value="attorney">Attorney
+                    </select>
+                    <input type="checkbox" ng-model="ordering">Open For Ordering
+                </div>
+                <div>
+                    <label>HCM Class</label>
+                    <select ng-model="hcmClass">
+                        <option value="garnpay">Garn Payee
+                        <option value="gdeduction">General Deduction
+                        <option value="gprovider">General Provider
+                        <option value="partner">Imp Partner Provider
+                        <option value="industry">Industrial Ins Board Provider
+                        <option value="national">National Health Serv Provider
+                        <option value="tax">Tax Collector
+                    </select>
+                    <input type="checkbox" ng-model="registration">VAT Registration
+                </div>
+                <div>
+                    <label class="periodslabel">Persistence</label>
+                    <select ng-model="persistance">
+                        <option value="garnpay">Regular
+                        <option value="onetime">One Time
+                        <option value="permanent">Permanent
+                        <option value="spayment">Single Payment Supplier
+                    </select>
+                    <label class="periodslabel">Supplier Audit</label>
+                    <select ng-model="saudit">
+                        <option value="garnpay">Default
+                        <option value="onetime">Specify
+                    </select>
+                </div>
+                <div>
+                    <label class="periodslabel">Supplier Status</label>
+                    <select ng-model="sStatus">
+                        <option value="approved">Approved
+                        <option value="inactive">Inactive
+                        <option value="toarchive">To Archive
+                        <option value="unapproved">Unapproved
+                    </select>
+                    <input type="checkbox" ng-model="saudit">Supplier Audit
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">&nbsp; Suppliers Relationships</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="divspace"></div>
+                    <div class="checkCls">
+                        <input type="checkbox" ng-model="billToCstmr"><label>Corporate Supplier</label>
+                        <input type="checkbox" ng-model="billToCstmr"><label>InterUnit Supplier</label>
+                    </div>
+                    <div class="CorporateCls">
+                        <label>Corporate SetID</label><input type="text" ng-model="csetid">
+                        <label>InterUnit Supplier ID</label><input type="text" ng-model="isID">
+                    </div>
+                    <div class="CorporateCls">
+                        <label>Corporate Supplier ID</label><input type="text" ng-model="corporateID">
+                    </div>
+                    <div class="divspace"></div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">&nbsp; Create Bill-To Customer</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="checkCls">
+                        <input type="checkbox" ng-model="billToCstmr">Create Bill-To Customer
+                    </div>
+                </div>
+            </div>
+            <div class="right-buffer">
+                <button  type="button"  class="btn btn-primary top-buffer" id="expandall" ng-click="expandAll()">Expand All</button>
+                <button  type="button"  class="btn btn-primary top-buffer" id="collapseall" ng-click="collapseAll()">Collapse All</button><div class="divspace"></div>
+            </div>
+            <div class="accordion">
+                <button  type="button"  class="btn btn-primary btn-block text-left" data-toggle="collapse" data-target="#srating">Supplier Rating</button>
+                <div id="srating"  class="collapse accordionborder">
+                    <input type="radio" ng-model="excellent" value="excellent">Excellent <div class="divspace"></div>
+                    <input type="radio" ng-model="good" value="good">Good<div class="divspace"></div>
+                    <input type="radio" ng-model="fair" value="fair">Fair<div class="divspace"></div>
+                    <input type="radio" ng-model="poor" value="poor">Poor<div class="divspace"></div>
+                    <input type="radio" ng-model="none" value="none">None<div class="divspace"></div>
+                </div><div class="divspace"></div>
+                <button type="button" class="btn btn-primary btn-block text-left" data-toggle="collapse" data-target="#slogo">Supplier Logo</button>
+                <div id="slogo" class="collapse accordionborder"><div class="divspace"></div>
+                    <button  type="button"  class="btn btn-primary top-buffer" ng-click="addimg()">Add Image</button><div class="divspace"></div>
+                    <button  type="button"  class="btn btn-primary top-buffer" ng-click="deleteimg()">Delete Image</button><div class="divspace"></div>
+                </div><div class="divspace"></div>
+                <button type="button" class="btn btn-primary btn-block text-left" data-toggle="collapse" data-target="#addnumbers">Additional ID Numbers</button>
+                <div id="addnumbers" class="collapse accordionborder ">
+                    <label>Customer SetID</label> <input type="text" ng-model="csetId" size="05">
+                    <label class="middlespace">Customer ID</label> <input type="text" ng-model="cId">
+                    <label class="middlespace">Our Customer Number</label> <input type="text" ng-model="cnumber">
+
+                    <br><br>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">ID Numbers</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table">
+                                <thead>
+                                <th>Type</th>
+                                <th>SetID</th>
+                                <th>ID Number</th>
+                                <th>DUNS Number	</th>
+                                <th> </th>
+                                <th> </th>
+                                </thead>
+                                <tbody>
+
+                                <tr>
+                                    <td><input type="text"> </td>
+                                    <td></td>
+                                    <td><input type="text">  </td>
+                                    <td></td>
+                                    <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                                    <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)" ></i></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="linkdiv"><a href="">ISO and SEPA Information</a></div>
+                </div><div class="divspace"></div>
+                <button type="button" class="btn btn-primary btn-block text-left" data-toggle="collapse" data-target="#duplicateinvoice">Duplicate Invoice Settings</button>
+                <div id="duplicateinvoice" class="collapse"><br>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">ID Numbers</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="supplierInfoDiv">
+                                <label >Effective Date</label><input type="date"/>
+                                <label class="periodslabel">Duplicate Inv Indicator</label>
+                                <select ng-model="indicator">
+                                    <option value="hlevel">Default from Higher level
+                                    <option value="slevel">Specify at this level
+                                </select>
+                            </div>
+                            <div class="Severitydiv">
+                                <label>Status</label>
+                                <select ng-model="status">
+                                    <option value="active">Active
+                                    <option value="inactive">Inacative
+                                </select>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Duplicate Invoice Severity</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <input type="radio" ng-model="excellent" value="excellent">Reject<div class="divspace"></div>
+                                        <input type="radio" ng-model="good" value="good">Recycle<div class="divspace"></div>
+                                        <input type="radio" ng-model="fair" value="fair">Warning<div class="divspace"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttonsdiv">
+                                <input type="checkbox" ng-model="billToCstmr">Business Unit<div class="divspace"></div>
+                                <input type="checkbox" ng-model="billToCstmr">Supplier ID<div class="divspace"></div>
+                                <input type="checkbox" ng-model="billToCstmr">Invoice Number<div class="divspace"></div>
+                                <input type="checkbox" ng-model="billToCstmr">Invoice Date<div class="divspace"></div>
+                                <input type="checkbox" ng-model="billToCstmr">Gross Amount<div class="divspace"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="divspace"></div>
+                <button type="button" class="btn btn-primary btn-block text-left" data-toggle="collapse" data-target="#classification">Government Classifications</button>
+                <div id="classification" class="collapse">
+                    <div>
+                        <div class="divspace"></div>
+                        <label class="periodslabel labelstyle">EEO Certification Date</label><input type="date"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" ng-model="hubzone" value="hubzone">HUB Zone
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Government Sources</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="divspace"></div><label class="periodslabel labelstyle">Certification Source Required</label><input type="text"/>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Government Classifications</h3>
+                                </div>
+                                <div class="panel-body labelCls">
+                                    <div class="divspace"></div>
+                                    <div>
+                                        <label>Effective Date</label><input type="date">
+                                        <label>Certification Number</label><input type="text">
+                                    </div>
+                                    <div>
+                                        <label>Certificate Begin Date</label><input type="date">
+                                        <label>Certificate Expiration</label><input type="date">
+                                    </div>
+                                    <div>
+                                        <label >Government Classification</label><input type="text">
+                                    </div>
+                                    <div class="divspace"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="divspace"></div>
+                <button type="button" class="btn btn-primary btn-block text-left" data-toggle="collapse" data-target="#sindustry">Standard Industry Codes </button>
+                <div id="sindustry" class="collapse"><br/>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Standard Industrial Classification Codes</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table">
+                                <thead>
+                                <th>SIC Type</th>
+                                <th>SIC Code</th>
+                                <th>Parent SIC Code</th>
+                                <th>Description</th>
+                                <th> </th>
+                                <th> </th>
+                                </thead>
+                                <tbody>
+
+                                <tr>
+                                    <td><input type="text"> </td>
+                                    <td><input type="text"> </td>
+                                    <td><input type="text">  </td>
+                                    <td><input type="text"> </td>
+                                    <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                                    <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)" ></i></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div><div class="divspace"></div>
+                <button type="button" class="btn btn-primary btn-block text-left" data-toggle="collapse" data-target="#areporting">Additional Reporting Elements</button>
+                <div id="areporting" class="collapse">
+                    <div>
+                        <label>Common Parent's TIN  </label><input type="text" class="labelspace">
+                        <label>Common Parent's Name </label><input type="text" class="labelspace">
+                    </div>
+                    <div>
+                        <label>Type of Contractor</label>
+                        <select ng-model="indicator">
+                            <option value="hlevel">Default from Higher level
+                            <option value="slevel">Specify at this level
+                        </select>
+                        <label>HUBZone Program</label>
+                        <select ng-model="indicator">
+                            <option value="hlevel">Default from Higher level
+                            <option value="slevel">Specify at this level
+                        </select>
+                    </div>
+                    <div>
+                        <label>SDB Program</label>
+                        <select ng-model="indicator">
+                            <option value="hlevel">Default from Higher level
+                            <option value="slevel">Specify at this level
+                        </select>
+                        <label>Size of Small Business</label>
+                        <select ng-model="indicator">
+                            <option value="hlevel">Default from Higher level
+                            <option value="slevel">Specify at this level
+                        </select>
+                    </div>
+                    <div>
+                        <label>Other Preference Programs</label>
+                        <select ng-model="indicator">
+                            <option value="hlevel">Default from Higher level
+                            <option value="slevel">Specify at this level
+                        </select>
+                        <label>VOSB</label>
+                        <select ng-model="indicator">
+                            <option value="hlevel">Default from Higher level
+                            <option value="slevel">Specify at this level
+                        </select>
+                    </div>
+                    <div>
+                        <label>Ethnicity</label>
+                        <select ng-model="indicator">
+                            <option value="hlevel">Default from Higher level
+                            <option value="slevel">Specify at this level
+                        </select><br>
+                        <input type="checkbox" ng-model="billToCstmr">Emerging Small Business<div class="divspace"></div>
+                        <input type="checkbox" ng-model="billToCstmr">Women-Owned Business<div class="divspace"></div>
+                        <input type="checkbox" ng-model="billToCstmr">Veteran<div class="divspace"></div>
+                        <input type="checkbox" ng-model="billToCstmr">Disabled<div class="divspace"></div>
+                    </div>
+
+                </div><div class="divspace"></div>
+                <button type="button" class="btn btn-primary btn-block text-left" data-toggle="collapse" data-target="#comments">Comments</button>
+                <div id="comments" class="collapse"><br>
+                    <label style="display:block;">Comments</label><textarea ng-model="myTextarea" style="width: 80%;height: 100px;display:block;"></textarea>
+                </div><div class="divspace"></div>
+            </div>
+            <div class="left-buffer">
+                <button class="btn btn-primary top-buffer" ng-click="save()"> Save</button>
+                <button class="btn btn-primary top-buffer" ng-click="returntoSearch()"> Return to Search</button>
+            </div><br>
+        </script>
+
+        <script type="text/ng-template" id="add.address">
+            <div class="addressDiv">
+                <div>
+                    <label >SetID</label><span>{{sData.setID}}</span>
+                </div>
+                <div>
+                    <label>Supplier ID</label><span>{{sData.supplierID}}</span>
+                    <label>Short Supplier Name</label><span> {{sData.shortSupplierName}}</span>
+                    <label>Supplier</label><span>{{sData.supplierName}}</span>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Supplier Address</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            <label>Address ID</label><span>{{sData.supplierID}}</span>
+                        </div>
+                        <div>
+                            <label>Headquarters</label> <input type="text" ng-model="adrdescription">
+                        </div><br>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Details</h3>
+                            </div>
+                            <div class="panel-bodyv ">
+                                <div><br>
+                                    <label>Effective Date</label><input type="date">
+                                    <label>Effective Status</label>
+                                    <select ng-model="effctstatus">
+                                        <option value="active">Active
+                                        <option value="inactive">Inactive
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Country</label> <input type="text"size="05" ng-model="adrdescription">
+                                </div>
+                                <div>
+                                    <label>Address 1</label><input type="text">
+                                </div>
+                                <div>
+                                    <label>Address 2</label><input type="text">
+                                </div>
+                                <div>
+                                    <label>Address 3</label><input type="text">
+                                </div>
+                                <div>
+                                    <label>City</label><input type="text">
+                                </div>
+                                <div>
+                                    <label>County</label><input type="text">
+                                    <label>Postal</label><input type="text">
+                                </div>
+                                <div>
+                                    <label>State</label><input type="text">
+                                </div>
+                                <div>
+                                    <label>Email ID</label><input type="text">
+                                </div><br/>
+                                <div class="accordion">
+                                    <button  type="button"  class="btn btn-primary btn-block text-left" data-toggle="collapse" data-target="#paymentdiv"> Payment/Withholding Alt Names</button>
+                                    <div id="paymentdiv"  class="collapse accordionborder"><br>
+                                        <div class="panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Payment Alternate name</h3>
+                                            </div>
+                                            <div class="panel-body payCls">
+                                                <div>
+                                                    <label>Name 1</label><input type="text">
+                                                </div>
+                                                <div>
+                                                    <label>Name 2</label><input type="text">
+                                                </div>
+                                            </div>
+                                        </div><div class="middlespace"></div>
+                                        <div class="panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Withholding Alternate name</h3>
+                                            </div>
+                                            <div class="panel-body payCls">
+                                                <div>
+                                                    <label>Withholding Name 1</label><input type="text">
+                                                </div>
+                                                <div>
+                                                    <label>Withholding Name 2</label><input type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Phone Information</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <table class="table">
+                                            <thead>
+                                            <th class="periodslabel">Type</th>
+                                            <th>Location</th>
+                                            <th>Prefix</th>
+                                            <th>Telephone</th>
+                                            <th> </th>
+                                            <th> </th>
+                                            </thead>
+                                            <tbody>
+
+                                            <tr>
+                                                <td><input type="text"> </td>
+                                                <td><input type="text"> </td>
+                                                <td><input type="text">  </td>
+                                                <td><input type="text"> </td>
+                                                <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                                                <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)" ></i></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="left-buffer">
+                <button class="btn btn-primary top-buffer" ng-click="save()"> Save</button>
+                <button class="btn btn-primary top-buffer" ng-click="returntoSearch()"> Return to Search</button>
+            </div><br>
+        </script>
+
+        <script type="text/ng-template" id="add.contacts">
+            <div class="addressDiv">
+                <div>
+                    <label >SetID</label><span>{{sData.setID}}</span>
+                </div>
+                <div>
+                    <label>Supplier ID</label><span>{{sData.supplierID}}</span>
+                    <label>Short Supplier Name</label><span>{{sData.shortSupplierName}}</span>
+                    <label>Supplier</label><span>{{sData.supplierName}}</span>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Supplier Contact</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            <label>Contact ID</label><span>1</span>
+                        </div>
+                        <div>
+                            <label>Description</label> <input type="text" ng-model="adrdescription">
+                        </div><br>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Details</h3>
+                            </div>
+                            <div class="panel-bodyv ">
+                                <div><br>
+                                    <label>Effective Date</label><input type="date">
+                                    <label>Effective Status</label>
+                                    <select ng-model="effctstatus">
+                                        <option value="active">Active
+                                        <option value="inactive">Inactive
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Effective Date</label> <input type="date"size="05">
+                                </div>
+                                <div>
+                                    <label>Effective Status</label><input type="text">
+                                </div>
+                                <div>
+                                    <label>Type</label><input type="text">
+                                </div>
+                                <div>
+                                    <label>Name 3</label><input type="text">
+                                </div>
+                                <div>
+                                    <label>Title</label><input type="text">
+                                </div>
+                                <div>
+                                    <label>Address</label><input type="text">
+                                </div>
+                                <div>
+                                    <label>Internet</label><input type="text">
+                                    <a href="">View Internet Address</a>
+                                </div>
+                                <div>
+                                    <label>Email ID</label><input type="text">
+                                </div><br/>
+                                <br>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Phone Information</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <table class="table">
+                                            <thead>
+                                            <th class="periodslabel">Type</th>
+                                            <th>Prefix</th>
+                                            <th>Telephone</th>
+                                            <th>Extension</th>
+                                            <th> </th>
+                                            <th> </th>
+                                            </thead>
+                                            <tbody>
+
+                                            <tr>
+                                                <td><input type="text"> </td>
+                                                <td><input type="text">  </td>
+                                                <td><input type="text"> </td>
+                                                <td><input type="text"> </td>
+                                                <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                                                <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)" ></i></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="left-buffer">
+                <button class="btn btn-primary top-buffer" ng-click="save()"> Save</button>
+                <button class="btn btn-primary top-buffer" ng-click="returntoSearch()"> Return to Search</button>
+            </div><br>
+        </script>
+
+        <script type="text/ng-template" id="add.location">
+            <div class="addressDiv">
+                <div>
+                    <label >SetID</label><span>{{sData.setID}}</span>
+                </div>
+                <div>
+                    <label>Supplier ID</label><span>{{sData.supplierID}}</span>
+                    <label>Short Supplier Name</label><span>{{sData.shortSupplierName}}</span>
+                    <label>Supplier</label><span>{{sData.supplierName}}</span>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Location</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            <label class="periodslabel">Location</label><span>1</span>
+                            <input type="checkbox"><label>Default</label>
+                            <a href="">RTV Fees</a>
+                            <a href="">Attachments</a>
+                        </div>
+                        <div>
+                            <label>Description</label> <input type="text" size="20">
+                        </div><br>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Details</h3>
+                            </div>
+                            <div class="panel-bodyv ">
+                                <div><br>
+                                    <label>Effective Date</label><input type="date">
+                                    <label>Effective Status</label>
+                                    <select ng-model="effctstatus">
+                                        <option value="active">Active
+                                        <option value="inactive">Inactive
+                                    </select>
+                                </div>
+                                <div class="right-buffer">
+                                    <button  type="button"  class="btn btn-primary top-buffer"  ng-click="expandAll()">Expand All</button>
+                                    <button  type="button"  class="btn btn-primary top-buffer"  ng-click="collapseAll()">Collapse All</button><div class="divspace"></div>
+                                </div>
+                                <br/>
+                                <div class="accordion">
+                                    <button  type="button"  class="btn btn-primary btn-block text-left" data-toggle="collapse" data-target="#adddiv"> Additional ID Numbers </button>
+                                    <div id="adddiv"  class="collapse accordionborder"><br>
+                                        <div class="panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">ID Numbers</h3>
+                                            </div>
+                                            <div class="panel-body payCls">
+                                                <table class="table">
+                                                    <thead>
+                                                    <th>Type</th>
+                                                    <th>SetID</th>
+                                                    <th>ID Number</th>
+                                                    <th>DUNS Number	</th>
+                                                    <th> </th>
+                                                    <th> </th>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    <tr>
+                                                        <td><input type="text"> </td>
+                                                        <td><input type="text">  </td>
+                                                        <td><input type="text"> </td>
+                                                        <td><input type="text"> </td>
+                                                        <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                                                        <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)" ></i></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div><div class="middlespace"></div>
+                                        <div class="panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">Standard Industrial Classification Codes</h3>
+                                            </div>
+                                            <div class="panel-body payCls">
+                                                <table class="table">
+                                                    <thead>
+                                                    <th>SIC Type</th>
+                                                    <th>SIC Code</th>
+                                                    <th>Parent SIC Code</th>
+                                                    <th>Description</th>
+                                                    <th> </th>
+                                                    <th> </th>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    <tr>
+                                                        <td><input type="text"> </td>
+                                                        <td><input type="text">  </td>
+                                                        <td><input type="text"> </td>
+                                                        <td><input type="text"> </td>
+                                                        <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                                                        <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)" ></i></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div><div class="divspace"></div>
+                                    <button  type="button"  class="btn btn-primary btn-block text-left" data-toggle="collapse" data-target="#commentsdiv"> Comments </button>
+                                    <div id="commentsdiv"  class="collapse accordionborder"><br>
+                                        <div class="panel-default">
+                                            <textarea ng-model="myTextarea" style="width: 100%;height: 100px;display:block;"></textarea>
+                                        </div>
+                                    </div><div class="divspace"></div>
+                                    <button  type="button"  class="btn btn-primary btn-block text-left" data-toggle="collapse" data-target="#internetdiv"> Internet Address </button>
+                                    <div id="internetdiv"  class="collapse accordionborder"><br>
+                                        <div class="panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">URL Information</h3>
+                                            </div>
+                                            <div class="panel-body payCls">
+                                                <table class="table">
+                                                    <thead>
+                                                    <th></th>
+                                                    <th>URLID</th>
+                                                    <th>Description</th>
+                                                    <th>Open URL</th>
+                                                    <th> </th>
+                                                    <th> </th>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    <tr>
+                                                        <td>{{$index+1}} </td>
+                                                        <td><input type="text">  </td>
+                                                        <td><input type="text"> </td>
+                                                        <td><input type="text"> </td>
+                                                        <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                                                        <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)" ></i></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="left-buffer">
+                                <button  type="button"  class="btn btn-primary top-buffer"  ng-click="expandAll()">Expand All</button>
+                                <button  type="button"  class="btn btn-primary top-buffer"  ng-click="collapseAll()">Collapse All</button><div class="divspace"></div>
+                            </div><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="left-buffer">
+                <button class="btn btn-primary top-buffer" ng-click="save()"> Save</button>
+                <button class="btn btn-primary top-buffer" ng-click="returntoSearch()"> Return to Search</button>
+            </div><br>
+            </div>
+        </script>
+
+        <script type="text/ng-template" id="add.custom">
+            <div class="addressDiv">
+                <div>
+                    <label >SetID</label><span>{{sData.setID}}</span>
+                </div>
+                <div>
+                    <label>Supplier ID</label><span>{{sData.supplierID}}</span>
+                    <label>Short Supplier Name</label><span>{{sData.shortSupplierName}}</span>
+                    <label>Supplier</label><span>{{sData.supplierName}}</span>
+                </div>
+                <hr class="verticalCls">
+                <div class="supplierfieldCls">
+                    <div>
+                        <label>Supplier Field C30 A</label><input type="text">
+                        <label>Supplier Field C30 F</label><input type="text">
+                    </div>
+                    <div>
+                        <label>Supplier Field C30 B</label><input type="text">
+                        <label>Supplier Field C30 G</label><input type="text">
+                    </div>
+                    <div>
+                        <label>Supplier Field C30 C</label><input type="text">
+                        <label>Supplier Field C30 H</label><input type="text">
+                    </div>
+                    <div>
+                        <label>Supplier Field C30 D</label><input type="text">
+                        <label>Supplier Field C30 I</label><input type="text">
+                    </div>
+                    <div>
+                        <label>Supplier Field C30 E</label><input type="text">
+                        <label>Supplier Field C30 J</label><input type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="left-buffer">
+                <button class="btn btn-primary top-buffer" ng-click="save()"> Save</button>
+                <button class="btn btn-primary top-buffer" ng-click="returntoSearch()"> Return to Search</button>
+            </div><br>
+        </script>
+    </div>
+</div>
+
+

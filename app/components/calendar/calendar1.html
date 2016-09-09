@@ -1,0 +1,54 @@
+<div class="calendarClass" ng-controller="calendarCtrl">
+    <div id="calendarTabs">
+        <ul>
+            <li ng-repeat="tab in calendarTabs"
+                ng-class="{active:isActiveTab(tab.url)}"
+                ng-click="onClickTab(tab)">{{tab.title}}</li>
+        </ul>
+        <div id="mainView">
+            <div ng-include="currentTab"></div>
+        </div>
+    </div>
+    <script type="text/ng-template" id="add.existing">
+        <div class="panel panel-default" ng-if="!showDiv">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span class="glyphicon glyphicon-triangle-bottom"></span>&nbsp; Search Criteria</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12 top-buffer"><lable class="col-md-2">SetID:</lable><input class="col-md-2" ng-model="setid" type="text">  </div>
+
+
+                <div class="col-md-12 top-buffer"><lable class="col-md-2">Calendar ID:</lable><input type="text" ng-model="calid" class="col-md-2"> </div>
+                <div class="col-md-12 top-buffer"><lable class="col-md-2">Fiscal Year:</lable><input type="text" ng-model="fiscalyr" class="col-md-2"> </div>
+                <div class="left-buffer">
+                    <button class="btn btn-primary top-buffer" ng-click="totalSearch()">Search</button>
+                    <button class="btn btn-primary top-buffer" ng-click="clear()">Clear</button>
+                </div>
+                <br>
+                <br>
+                 <table class="table left-buffer col-md-4 calendarsearchTable" ng-if="caledarSearchTable">
+                    <thead>
+                    <th> SetID</th>
+                    <th> Calendar ID</th>
+                    <th> Fiscal Year</th>
+                    <th> Description</th>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat="calData in calendarBrief | filter : {setID:setid,CalendarID:calid,FiscalYear:fiscalyr}">
+                        <td><a ng-click="addNewValue(calData)">{{calData.setID}}</a> </td>
+                        <td>{{calData.CalendarID}}</td>
+                        <td>{{calData.FiscalYear}} </td>
+                        <td>{{calData.Description}} </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <div ng-include="'app/components/calendar/addNewValue.html'" ng-if="showDiv"></div>
+    </script>
+    <script type="text/ng-template" id="add.newvalue">
+    <div ng-include="'app/components/calendar/addNewValue.html'"  ></div>
+    </script>
+</div>

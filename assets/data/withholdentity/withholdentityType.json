@@ -1,0 +1,59 @@
+[
+  {
+    "class" : "01",
+    "withholdingentity":"ABCD",
+    "Description" : "Admin Belge Contribut. Directe"
+  },
+  {
+    "class" : "02",
+    "withholdingentity":"AT",
+    "Description" : "Spanish Tax Agency"
+  },
+  {
+    "class" : "03",
+    "withholdingentity":"ATO",
+    "Description" : "Australian Tax Office"
+  },
+  {
+    "class" : "05",
+    "withholdingentity":"CCRA",
+    "Description" : "Canada Customs & Rev. Agency"
+  },
+  {
+    "class" : "06",
+    "withholdingentity":"HMRC",
+    "Description" : "HM Revenue & Customs"
+  },
+  {
+    "class" : "07",
+    "withholdingentity":"MF",
+    "Description" : "French ministry of finance"
+  },
+  {
+    "class" : "08",
+    "withholdingentity":"WHT",
+    "Description" : "Japan withholding entity"
+  },
+  {
+    "class" : "09",
+    "withholdingentity":"IT",
+    "Description" : "Italy - Withholding Entity"
+  },
+  {
+    "class" : "10",
+    "withholdingentity":"IRS",
+    "Description" : "Internal Revenue Service"
+  },
+  {
+    "class" : "11",
+    "withholdingentity":"IR",
+    "Description" : "Inland Revenue - UK"
+  },
+  {
+    "class" : "12",
+    "withholdingentity":"INDWC",
+    "Description" : "Works Contract Tax Authority"
+  }
+
+
+]

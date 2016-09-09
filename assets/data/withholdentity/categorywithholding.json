@@ -1,0 +1,8 @@
+[
+	{"unitcategory":"NONE",
+	"vendorcategory":"HOLD",
+	"withholdingrule": "RULE0",
+	"description":"Zero Percent Withholding rule",
+	"holdpayment":["hold with & regular payment", "Do Not Hold", "hold with & regular payment"]
+	}
+    ]

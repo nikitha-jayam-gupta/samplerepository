@@ -1,0 +1,57 @@
+.whinfo1div{
+    padding-top : 15px;
+}
+
+.whinfo{
+    padding: 2%;
+}
+
+.whinfo h2{
+    margin-left: 0px !important;
+}
+
+.whinfo .whinfo1div div{
+    float: left;
+    width: 30%;
+}
+
+.whinfo .whinfo1div label , .whinfo .whinfo2div label , .whinfo3div label , .whinfo4div label{
+    width: 165px;
+    display: inline-block;
+}
+
+.whinfo2div , .whinfo3div ,.whinfo4div{
+    display: inline;
+    width: 100%;
+    float: left;
+}
+
+.whinfo2div div ,.whinfo3div div {
+    float: left;
+    width: 30%;
+}
+
+.whinfo4div div{
+    width: 100%;
+}
+
+.whinfo4div input[type=text]{
+    width: 220px !important;
+}
+
+.whinfo .panel-default>.panel-heading,.whinfo .panel-default>.panel-heading{
+    color: #FFFFFF;
+    background-color: #0073CF;
+}
+
+.panel-body{
+    padding : 0px!important;
+}
+
+.innerPanel{
+    margin-left: 10px;
+}
+
+.whinfo  input[type=text]{
+    width: 100px;;
+}

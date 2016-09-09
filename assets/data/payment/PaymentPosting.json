@@ -1,0 +1,79 @@
+[
+  {
+    "controlID" : "00077",
+    "languageCode" : "English",
+    "setID":"HU001",
+    "bCode":"1080253",
+    "bAccount":"000012385920",
+    "paymentMethod":"online Payment",
+    "paymentReference":"31234259"
+  },
+  {
+    "controlID" : "000777",
+    "languageCode" : "English",
+    "setID":"HU001",
+    "bCode":"1080253",
+    "bAccount":"000012384850",
+    "paymentMethod":"online Payment",
+    "paymentReference":"31231890"
+  },{
+    "controlID" : "0011",
+    "languageCode" : "English",
+    "setID":"HU001",
+    "bCode":"1080253",
+    "bAccount":"000012389520",
+    "paymentMethod":"online Payment",
+    "paymentReference":"31231524"
+},{
+    "controlID" : "00110",
+    "languageCode" : "English",
+    "setID":"HU001",
+    "bCode":"1080253",
+    "bAccount":"000012381029",
+    "paymentMethod":"online Payment",
+    "paymentReference":"31234560"
+},{
+    "controlID" : "001100",
+    "languageCode" : "English",
+    "setID":"HU001",
+    "bCode":"1080253",
+    "bAccount":"000012381685",
+    "paymentMethod":"online Payment",
+    "paymentReference":"REDF"
+},{
+    "controlID" : "007",
+    "languageCode" : "English",
+    "setID":"HU001",
+    "bCode":"1080253",
+    "bAccount":"000012381580",
+    "paymentMethod":"online Payment",
+    "paymentReference":"31234102"
+},{
+    "controlID" : "0070",
+    "languageCode" : "English",
+    "setID":"HU001",
+    "bCode":"1080253",
+    "bAccount":"000012385036",
+    "paymentMethod":"online Payment",
+    "paymentReference":"31234178"
+}
+,{
+    "controlID" : "0077",
+    "languageCode" : "English",
+    "setID":"HU001",
+    "bCode":"1080253",
+    "bAccount":"000012381896",
+    "paymentMethod":"online Payment",
+    "paymentReference":"31234126"
+},{
+    "controlID" : "0321",
+    "languageCode" : "English",
+    "setID":"HU001",
+    "bCode":"1080253",
+    "bAccount":"0000123851205",
+    "paymentMethod":"online Payment",
+    "paymentReference":"31234567"
+}
+]
+
+

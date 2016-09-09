@@ -1,0 +1,13 @@
+[
+  {
+    "entity" : "0000039332",
+    "newType" : "1099",
+    "newJurCD":"FED",
+    "newClass" : "07",
+    "description":"FED",
+    "bamount":"FED",
+    "liability":"50000",
+    "paidamount":"10000",
+    "currency": "100000"
+  }
+]

@@ -1,0 +1,42 @@
+[
+	{"setid":"share",
+	"withholdingcode":"1",
+	"description": "Rents"
+	},
+	{"setid":"share",
+	"withholdingcode":"2",
+	"description": "Royalties"
+	},
+	{"setid":"share",
+	"withholdingcode":"3",
+	"description": "Prizes,Awards"
+	},
+	{"setid":"share",
+	"withholdingcode":"4",
+	"description": "Federal Income Tax"
+	},
+	{"setid":"share",
+	"withholdingcode":"5",
+	"description": "Section 409A deferrals"
+	},
+	{"setid":"a",
+	"withholdingcode":"6",
+	"description": "Section 409a Income"
+	},
+	{"setid":"b",
+	"withholdingcode":"7",
+	"description": "Substitute Payments"
+	},
+	{"setid":"c",
+	"withholdingcode":"8",
+	"description": "Crop Insurance Proceeds"
+	},
+	{"setid":"d",
+	"withholdingcode":"9",
+	"description": "Fishing Boat Proceeds"
+	},
+	{"setid":"e",
+	"withholdingcode":"10",
+	"description": "Non-Employee Compensation"
+	}
+    ]

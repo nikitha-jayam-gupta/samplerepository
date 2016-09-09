@@ -1,0 +1,69 @@
+<div class="VoucherCls" ng-controller="vendorClassCtrl">
+    <h2>Vendor Balance</h2>
+
+    <div class="col-md-12">
+        <div class="col-md-4"><label>SetID:</label><span></span> </div>
+        <div class="col-md-4"><label>Vendor:</label><span></span></div>
+        <div class="col-md-4"><label>Location:</label><span></span></div>
+    </div>
+    <br><br>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Payment</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 toppadCls">
+                <div class="col-md-4"><label>Start Date:</label><input type="date"> </div>
+                <div class="col-md-4"><label>End Date:</label><input type="date"></div>
+                <div class="col-md-4 hrCls"><button class="btn btn-primary">Search</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Business Units</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 toppadCls">
+                <div class="col-md-4"><label>Business Unit:</label><span></span></div>
+            </div>
+            <br><br>
+            <div class="panel panel-default addSpaceCls">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Withholding Balances</h3>
+
+
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <th>Entity</th>
+                        <th>Type</th>
+                        <th>Juridiction</th>
+                        <th>Class</th>
+                        <th>Description</th>
+                        <th>Basis Amount</th>
+                        <th>Liability Amount</th>
+                        <th>Paid Amount</th>
+                        <th>Currency</th>
+                        </thead>
+                        <tbody>
+
+                        <tr ng-repeat="data in vendorClassData">
+                            <td>{{data.entity}}</td>
+                            <td>{{data.newType}}</td>
+                            <td>{{data.newJurCD}}</td>
+                            <td>{{data.newClass}}</td>
+                            <td>{{data.description}}</td>
+                            <td>{{data.bamount}}</td>
+                            <td>{{data.liability}}</td>
+                            <td>{{data.paidamount}}</td>
+                            <td>{{data.currency}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

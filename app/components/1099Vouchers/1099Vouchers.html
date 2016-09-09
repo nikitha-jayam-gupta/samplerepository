@@ -1,0 +1,83 @@
+<div class="VoucherCls" ng-controller="vouchersctrl">
+    <h2>Withholding Information</h2>
+
+    <div class="col-md-12 hrCls">
+        <div class="col-md-4"><a href="">Back to invoice</a></div>
+    </div><br>
+    <div class="col-md-12">
+        <div class="col-md-4"><label>Business Unit:</label><span>HU001</span></div>
+        <div class="col-md-5"><label>Invoice Number:</label><span>STPAKUMAKA1012214</span></div>
+        <div class="col-md-3"><label>VAT Entity:</label></div>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-4"><label>Voucher ID:</label><span>00305503</span></div>
+        <div class="col-md-5"><label>Vendor:</label><span>0000030619 Afi J Kumaaka</span></div>
+        <div class="col-md-3"><label>Invoice Date:</label><span>01/12/2014</span></div>
+    </div>
+    <br><br><br><br>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Withholding Option</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12">
+                <div class="postCls"><input type="checkbox"> Postpone Withholding</div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Invoice Line Withhold Information</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 toppadCls">
+                <div class="col-md-4"><label>Line:</label><span>1</span></div>
+                <div class="col-md-4"><label>Description:</label></div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4"><label>Withholding code:</label></div>
+                <div class="col-md-4"><input type="checkbox" checked> Withholding Applicable </div>
+            </div><br><br><br>
+            <div class="panel panel-default addSpaceCls">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Withholding Details</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <th> </th>
+                        <th>Entity</th>
+                        <th>Type</th>
+                        <th>Jurisdiction </th>
+                        <th>Class </th>
+                        <th>Withholding Basis Amt Override</th>
+                        <th>Contract Reference</th>
+                        <th>Rule Override</th>
+                        <th>Apply Withholding</th>
+                        <th>Applicable</th>
+                        <th> </th>
+                        <th> </th>
+                        </thead>
+                        <tbody>
+
+                        <tr ng-repeat="data in vouchersData">
+                            <td> {{$index+1}}</td>
+                            <td>{{data.entity}}</td>
+                            <td>{{data.type}}</td>
+                            <td>{{data.jurisdiction}}</td>
+                            <td>{{data.class}}</td>
+                            <td>{{data.amount}}</td>
+                            <td>{{data.contract}}</td>
+                            <td>{{data.rule}}</td>
+                            <td>{{data.witholding}}</td>
+                            <td><input type="checkbox" checked></td>
+                            <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                            <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)"></i></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+[
+  {
+    "bUnit" : "0000039332",
+    "sName" : "REMIT",
+    "paymentCount":"Y",
+    "entity" : "IRS",
+    "newType" : "1099",
+    "newJurCD":"FED",
+    "newClass" : "07",
+    "newRule":"FED",
+    "newType":"FED",
+    "class":"50000",
+    "rule":"10000"
+  }
+]

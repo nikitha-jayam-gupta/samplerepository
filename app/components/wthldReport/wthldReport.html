@@ -1,0 +1,138 @@
+<div class="VoucherCls" ng-controller="withholdReportCtrl">
+
+    <div id="witholdReportTabs">
+        <ul>
+            <li ng-repeat="tab in witholdInvoiceTabs"
+                ng-class="{active:isActiveTab(tab.url)}"
+                ng-click="onClickTab(tab)">{{tab.title}}</li>
+        </ul>
+        <div id="witholdReportView">
+            <div ng-include="currentTab"></div>
+        </div>
+    </div>
+
+    <script type="text/ng-template" id="add.current">
+        <h2>1099 Report Post/ Report/ Copy B</h2>
+
+        <div class="col-md-12 toppadCls">
+            <div class="col-md-4"><label>Run Control ID:</label><span></span> </div>
+            <div class="col-md-4"><a href="">Report Manager</a></div>
+            <div class="col-md-4"><a href="">Process Monitor</a></div>
+        </div>
+        <div class="col-md-12 toppadCls">
+            <div class="col-md-4"><label>Language:</label>
+                <select>
+                    <option>English</option>
+                    <option>Spanish</option>
+                </select>
+            </div>
+            <div class="col-md-4"><button class="btn btn-primary" ng-click="run()">Run</button> </div>
+        </div>
+        <br><br><br><br><br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">1099 Report Post</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12 toppadCls">
+                    <div class="col-md-4"><label>Request ID:</label><input type="text" size="10"></div>
+                    <div class="col-md-8"><label>Description:</label><input type="text" size="50"></div>
+                </div>
+                <div class="col-md-12 toppadCls">
+                    <div class="col-md-12"><label>Process Frequency:</label>
+                        <select>
+                            <option>Process Once</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12 toppadCls">
+                    <div class="col-md-4"><label>Report ID:</label><span></span> </div>
+                </div>
+                <div class="col-md-12 toppadCls">
+                    <div class="col-md-4"><label>Report Date:</label><span></span> </div>
+                </div>
+                <div class="col-md-12 toppadCls">
+                    <div class="col-md-4"><label>Control SetID:</label><input type="text" size="05"></div>
+                    <div class="col-md-4"><label>Control ID:</label><input type="text" size="05"></div>
+                </div>
+                <div class="col-md-12 toppadCls">
+                    <div class="col-md-4"><label>Calendar SetID:</label><input type="text" size="05"></div>
+                    <div class="col-md-4"><label>Calendar ID:</label><input type="text" size="05"></div>
+                </div>
+                <div class="col-md-12 toppadCls">
+                    <div class="col-md-4"><label>Fiscal Year:</label><input type="text" size="05"></div>
+                    <div class="col-md-4"><input type="checkbox"> Use Report Date For Vendor </div>
+                </div>
+                <div class="col-md-12 toppadCls hrCls">
+                    <div class="col-md-4"><label>Period:</label><input type="text" size="05"></div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">1099 Report</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12 toppadCls hrCls">
+                    <div class="col-md-4"> <label>Type Of File/Return</label>
+                        <select>
+                            <option>Original/Correction</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4"> <label>Replacement</label><input type="text" size="05"></div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">1099 Report Copy B Sort</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12 toppadCls">
+                    <div class="col-md-4"><label>Withhold Type:</label>
+                        <select>
+                            <option>1099M</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4"><label>Vendor Select Option:</label>
+                        <select>
+                            <option>Select All Vendors</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12 toppadCls hrCls">
+                    <div class="col-md-4"><label></label><input type="checkbox">Mask Tin</div>
+                    <div class="col-md-4"><label>Ap 1099 sort order:</label>
+                        <select>
+                            <option>Vendor Id Sort</option>
+                        </select>
+                    </div>
+                </div><br><br><br><br><br>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Vendor Payees</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                            <th></th>
+                            <th>Vendor ID</th>
+                            <th> </th>
+                            <th> </th>
+                            </thead>
+                            <tbody>
+
+                            <tr  ng-repeat="data in wthldAdjustmentsData">
+                                <td>{{$index+1}}</td>
+                                <td>{{data.description}}</td>
+                                <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                                <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</div>

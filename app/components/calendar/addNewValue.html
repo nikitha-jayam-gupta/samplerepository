@@ -1,0 +1,211 @@
+<div>
+    <div class="calendardiv1" >
+        <div class="calendardiv1div">
+            <label>&nbsp;SetID:</label> <input type="text" value="{{shareData.setID}}">
+        </div>
+        <div class>
+            <label>Calendar:</label> <input type="text" value="{{shareData.CalendarID}}">
+        </div>
+    </div>
+    <br>
+    <div class="calendardiv2">
+        <div class="calendardiv2div">
+            <label class="periodslabel">Periods in a Year:</label> <input type="text">
+        </div>
+        <div >
+            <label>End Date Defaults:</label>
+            <select>
+                <option value="bimonthly">BiMonthly</option>
+                <option value="days">Days</option>
+                <option value="monthly">Monthly</option>
+                <option value="none">None</option>
+                <option value="quaterly">Quaterly</option>
+                <option value="semiannual">Semi-Annual</option>
+                <option value="yearly">Yearly</option>
+
+
+            </select>
+        </div>
+        <div>
+            <label>Specify:</label>
+            <input type="checkbox">
+        </div>
+    </div>
+    <br>
+    <div class="calendardiv3">
+        <div class="calendardiv3div">
+            <label class="periodslabel">Description:</label> <input type="text" value="{{shareData.Description}}">
+        </div>
+    </div>
+    <br>
+    <div class="calendardiv4">
+        <div class="calendardiv4div">
+            <label> &nbsp; Long Description:</label> <textarea rows="1"></textarea>
+        </div>
+    </div>
+    <br>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-triangle-bottom"></span>&nbsp; Details Period</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table Details-period">
+                <thead>
+                <th><span class="periodslabel"></span> &nbsp;Year</th>
+                <th><span class="periodslabel"></span> &nbsp;Period</th>
+                <th><span class="periodslabel"></span> &nbsp;Begin Date</th>
+                <th><span class="periodslabel"></span> &nbsp;End Date</th>
+                <th><span class="periodslabel"></span> &nbsp;Period Name</th>
+                <th><span class="periodslabel"></span> &nbsp;Abbrev</th>
+                <th> </th>
+                <th> </th>
+                </thead>
+                <tbody>
+
+                <tr ng-repeat="d in myData" ng-show="!newTabClicked">
+                    <td><input type="text" value="{{d.Year}}"> </td>
+                    <td><input type="text" value="{{d.Period}}"> </td>
+                    <td ng-controller="datePickerCtrl">
+                        <i class="glyphicon glyphicon-calendar hidden"></i>
+                        <input type="text" class="form-control no-border name-edit-calander-adj bg-transparent clnder"
+                               name="effDate"
+                               id="name1_edit_pre_effective_date" datepicker-popup="{{format}}" readonly="readonly"
+                               ng-model="preferredNameData.effectiveDate" is-open="opened"
+                               ng-required="true" datepicker-options="dateOptions"
+
+                               close-text="Close"
+                        />
+
+                        <span class="input-group-btn pull-left calendar-new ">
+                            <button type="button" class="btn btn-default no-bg-all bo-border"
+                                    id="namespreferredopen1"
+                                    ng-click="open($event)">
+
+                                                        <i class="glyphicon glyphicon-calendar blue"></i>
+                                                    </button>
+                           </span>
+                    </td>
+                    <td ng-controller="datePickerCtrl">
+                        <i class="glyphicon glyphicon-calendar hidden"></i>
+                        <input type="text" class="form-control no-border name-edit-calander-adj bg-transparent clnder"
+                               name="effDate"
+                               id="name_edit_pre_effective_date" datepicker-popup="{{format}}" readonly="readonly"
+                               ng-model="preferredNameData.effectiveDate" is-open="opened"
+                               ng-required="true" datepicker-options="dateOptions"
+
+                               close-text="Close"
+                        />
+
+                        <span class="input-group-btn pull-left calendar-new ">
+                            <button type="button" class="btn btn-default no-bg-all bo-border"
+                                    id="namespreferredopen"
+                                    ng-click="open($event)">
+
+                                                        <i class="glyphicon glyphicon-calendar blue"></i>
+                                                    </button>
+                           </span>
+                    </td>
+                    <td><input type="text" value="{{d.PeriodName}}"></td>
+                    <td><input type="text" value="{{d.Abbrev}}"></td>
+                    <td><i class="glyphicon glyphicon-plus" ng-click="addTr('DP')"></i></td>
+                    <td><i class="glyphicon glyphicon-minus" ng-click="deleteTr('DP',$index)" ></i></td>
+                </tr>
+                <tr ng-show="newTabClicked">
+                    <td><input type="text" value="{{d.Year}}"> </td>
+                    <td><input type="text" value="{{d.Period}}"> </td>
+                    <td ng-controller="datePickerCtrl">
+                        <i class="glyphicon glyphicon-calendar hidden"></i>
+                        <input type="text" class="form-control no-border name-edit-calander-adj bg-transparent clnder"
+                               name="effDate"
+                               id="name2_edit_pre_effective_date" datepicker-popup="{{format}}" readonly="readonly"
+                               ng-model="preferredNameData.effectiveDate" is-open="opened"
+                               ng-required="true" datepicker-options="dateOptions"
+
+                               close-text="Close"
+                        />
+
+                        <span class="input-group-btn pull-left calendar-new ">
+                            <button type="button" class="btn btn-default no-bg-all bo-border"
+                                    id="namespreferredopen2"
+                                    ng-click="open($event)">
+
+                                                        <i class="glyphicon glyphicon-calendar blue"></i>
+                                                    </button>
+                           </span>
+                    </td>
+                    <td ng-controller="datePickerCtrl">
+                        <i class="glyphicon glyphicon-calendar hidden"></i>
+                        <input type="text" class="form-control no-border name-edit-calander-adj bg-transparent clnder"
+                               name="effDate"
+                               id="name3_edit_pre_effective_date" datepicker-popup="{{format}}"
+                               ng-model="d.EndDate" is-open="opened"
+                               ng-required="true" datepicker-options="dateOptions"
+
+                               close-text="Close" value="{{d.EndDate}}"
+                        />
+
+                        <span class="input-group-btn pull-left calendar-new ">
+                            <button type="button" class="btn btn-default no-bg-all bo-border"
+                                    id="namespreferredopen3"
+                                    ng-click="open($event)">
+
+                                                        <i class="glyphicon glyphicon-calendar blue"></i>
+                                                    </button>
+                           </span>
+                    </td>
+                    <td><input type="text" value="{{d.PeriodName}}"></td>
+                    <td><input type="text" value="{{d.Abbrev}}"></td>
+                    <td><i class="glyphicon glyphicon-plus" ng-click="addTr('DP')"></i></td>
+                    <td><i class="glyphicon glyphicon-minus" ng-click="deleteTr('DP',$index)" ></i></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-triangle-bottom"></span>&nbsp; Include Adjustments Period</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                <th>Adjustment Period</th>
+                <th>Period Name</th>
+                <th>Abbrevation</th>
+                <th> </th>
+                <th> </th>
+                </thead>
+                <tbody>
+
+                <tr ng-repeat="d1 in myData1" ng-show="!newTabClicked">
+                    <td><input type="text" value="{{d1.AdjustmentPeriod}}"> </td>
+                    <td><input type="text" value="{{d1.PeriodName}}"> </td>
+                    <td><input type="text" value="{{d1.Abbrevation}}"></td>
+                    <td><i class="glyphicon glyphicon-plus" ng-click="addTr('IAP')"></i></td>
+                    <td><i class="glyphicon glyphicon-minus" ng-click="deleteTr('IAP',$index)"></i></td>
+                </tr>
+                <tr ng-show="newTabClicked">
+                    <td><input type="text" value="{{d1.AdjustmentPeriod}}"> </td>
+                    <td><input type="text" value="{{d1.PeriodName}}"> </td>
+                    <td><input type="text" value="{{d1.Abbrevation}}"></td>
+                    <td><i class="glyphicon glyphicon-plus" ng-click="addTr('IAP')"></i></td>
+                    <td><i class="glyphicon glyphicon-minus" ng-click="deleteTr('IAP',$index)"></i></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        <div class="rightDiv">
+            <button class="btn btn-primary"><i class="glyphicon glyphicon-open-file"></i>  Save </button>
+            <button class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i>  Clear</button>
+            <button class="btn btn-primary" ng-click="addNewValue('')" ng-if="!newTabClicked">Return To Search</button>
+        </div>
+
+    </div>
+    <br>
+    <div>
+
+    </div>
+</div>

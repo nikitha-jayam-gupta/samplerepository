@@ -1,0 +1,113 @@
+<div class="paymentPost" ng-controller="paymentPostctrl">
+    <div id="vendorTabs" ng-hide="toggleDiv">
+        <ul>
+            <li ng-repeat="tab in vendorTabs"
+                ng-class="{active:isActiveTab(tab.url)}"
+                ng-click="onClickTab(tab)">{{tab.title}}</li>
+        </ul>
+        <div id="mainView">
+            <div ng-include="currentTab"></div>
+        </div>
+    </div>
+    <script type="text/ng-template" id="add.existing" >
+        <div class="panel panel-default" >
+            <div class="panel-heading">
+                <h3 class="panel-title"><span class="glyphicon glyphicon-triangle-bottom"></span>&nbsp; Search Criteria</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12 top-buffer"><lable class="col-md-2">Run Control ID:</lable><input class="col-md-2" ng-model="paymentSearch" type="text">  <i class="glyphicon glyphicon-search" ng-click="searchSetid()"></i> </div>
+
+                <div class="left-buffer">
+                    <button class="btn btn-primary top-buffer" ng-click="totalSearch()">Search</button>
+                    <button class="btn btn-primary top-buffer" ng-click="clear()">Clear</button>
+                </div>
+                <br>
+                <br>
+                <table class="table left-buffer col-md-4 calendarsearchTable" ng-if="paymentTable">
+                    <thead>
+                    <th> Run Control ID</th>
+                    <th> Language Code</th>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat="vData in paymentPostData | filter : {controlID:paymentSearch}">
+                        <td><a ng-click="paymentClick(vData)">{{vData.controlID}}</a> </td>
+                        <td>{{vData.languageCode}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </script>
+    <div ng-show="toggleDiv">
+        <h2>Payment Posting Request</h2>
+        <br>
+        <div class="vendorCategoryDiv">
+            <div class="reportCls">
+                <label>Run Control ID:</label><span>{{vData.controlID}}</span>
+                <a href="">Report Manager</a>
+                <a href="">Process Monitor</a>
+                <button class="btn btn-primary rightbuffer" ng-click="run()">Run</button>
+            </div>
+        </div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">Payment Request Parameters</div>
+            </div>
+            <div class="panel-body">
+               <br>
+               <div><label>Request ID</label><input type="text"></div>
+                <div><label>Description</label><input type="text" size="30"></div>
+                <div><label class="periodslabel">Process Frequency</label>
+                    <select>
+                        <option>Always Process</option>
+                        <option>Don't Run</option>
+                        <option>Always Process</option>
+                    </select>
+                </div>
+                <div><label class="periodslabel">Post Payment Option</label>
+                    <select>
+                        <option>Post All Banks</option>
+                        <option>Post Bank Account</option>
+                        <option>Post Payment</option>
+                        <option>Post Payment Method</option>
+                    </select>
+                    <input type="checkbox">Autopilot Run Control
+                </div>
+                <br>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">Post Payment List</div>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <thead>
+                            <th>SetID</th>
+                            <th>Bank Code</th>
+                            <th>Bank Account</th>
+                            <th>Payment Method </th>
+                            <th>Payment Reference</th>
+                            <th> </th>
+                            <th> </th>
+                            </thead>
+                            <tbody>
+
+                            <tr ng-repeat="data in paymentPostData">
+                                <td>{{data.setID}}</td>
+                                <td>{{data.bCode}} </td>
+                                <td>{{data.bAccount}} </td>
+                                <td>{{data.paymentMethod}}</td>
+                                <td>{{data.paymentReference}}</td>
+                                <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                                <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)"></i></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" ng-click="returnSearch()">Return to Search</button>
+    </div>
+</div>

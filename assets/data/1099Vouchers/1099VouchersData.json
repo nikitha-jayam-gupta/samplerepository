@@ -1,0 +1,12 @@
+[
+  {
+    "entity" : "IRS",
+    "type" : "1099",
+    "jurisdiction":"FED",
+    "class" : "03",
+    "amount" : "",
+    "contract":"",
+    "rule" : "",
+    "witholding":"Withhold at Payment"
+  }
+]

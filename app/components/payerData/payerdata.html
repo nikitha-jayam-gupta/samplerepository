@@ -1,0 +1,115 @@
+<div class="payerdata" ng-controller="payerDataCtrl">
+    <div class="col-md-8 table-bordered" >
+        <div class="col-md-6"><lable class="col-md-6">SetID:</lable><span class="col-md-6">ABC</span></div>
+        <div class="col-md-6"><lable class="col-md-6">Control ID:</lable><span class="col-md-6">SYST</span></div>
+    </div>
+    <br>
+    <br>
+    <form name="myForm" ng-submit="submitForm(myForm.$valid)">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Transmitter Information</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 padding">
+                <div class="col-md-4"><i class="glyphicon glyphicon-envelope"></i> <i class="glyphicon glyphicon-phone-alt"></i> </div>
+                <div class="col-md-8"><input type="checkbox"> Vendor Software Indicator</div>
+            </div>
+            <div class="col-md-12 padding">
+                <div class="col-md-4" >Transmitter Name 1:</div>
+                <div class="col-md-8" ><input name="transmitter1" ng-model="transmitter1" type="text" required>
+                    <span class="invalid" ng-show="myForm.transmitter1.$touched && myForm.transmitter1.$invalid">The transmitter name is required.</span></div>
+            </div>
+            <div class="col-md-12 padding">
+                <div class="col-md-4" >Transmitter Name 2:</div>
+                <div class="col-md-8" ><input  name="transmitter2" ng-model="transmitter2" type="text" required>
+                    <span class="invalid" ng-show="myForm.transmitter2.$touched && myForm.transmitter2.$invalid">The transmitter name is required.</span>
+                </div>
+            </div>
+            <div class="col-md-12 padding">
+                <div class="col-md-4" >Tax ID:</div>
+                <div class="col-md-8" ><input name="taxid" ng-model="taxid" type="text" required>
+                    <span class="invalid" ng-show="myForm.taxid.$touched && myForm.taxid.$invalid">The tax id is required.</span>
+                </div>
+            </div>
+            <div class="col-md-12 padding">
+                <div class="col-md-4" >Transmitter Cntl Cd:</div>
+                <div class="col-md-8" >
+                    <div class="col-md-4 removePadding">
+                        <input name="transmittercntlcd" ng-model="transmittercntlcd" type="text" required>
+                        <span class="invalid" ng-show="myForm.transmittercntlcd.$touched && myForm.transmittercntlcd.$invalid">The transmitter is required.</span>
+                    </div>
+                    <div class="col-md-8"><label class="col-md-5">Media Number:</label><input class="col-md-3" type="text"></div>
+                </div>
+            </div>
+            <div class="col-md-12 padding">
+                <div class="col-md-4" >Contact Name1:</div>
+                <div class="col-md-8" ><input name="contactname1" ng-model="contactname1" type="text" required>
+                    <span class="invalid" ng-show="myForm.contactname1.$touched && myForm.contactname1.$invalid">The Contact Name is required.</span>
+                </div>
+            </div>
+            <div class="col-md-12 padding">
+                <div class="col-md-4" >Contact Email Address:</div>
+                <div class="col-md-8" ><input type="text"></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Payer Information</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 padding">
+                <div class="col-md-4"><i class="glyphicon glyphicon-envelope"></i> <i class="glyphicon glyphicon-phone-alt"></i> </div>
+                <div class="col-md-8"><input type="checkbox"> Combined Federal State Filling</div>
+            </div>
+            <div class="col-md-12 padding">
+                <div class="col-md-4" >Payer Name 1:</div>
+                <div class="col-md-8" ><input type="text" name="payer1" ng-model="payer1" required>
+                    <span class="invalid" ng-show="myForm.payer1.$touched && myForm.payer1.$invalid">The payer1 Name is required.</span>
+                </div>
+            </div>
+            <div class="col-md-12 padding">
+                <div class="col-md-4" >Payer Name 2:</div>
+                <div class="col-md-8" ><input type="text" name="payer2" ng-model="payer2" required>
+                    <span class="invalid" ng-show="myForm.payer2.$touched && myForm.payer2.$invalid">The payer2 Name is required.</span>
+                </div>
+            </div>
+            <div class="col-md-12 padding">
+                <div class="col-md-4" >Control ID:</div>
+                <div class="col-md-8" ><input type="text" name="controlID" ng-model="controlID" required>
+                    <span class="invalid" ng-show="myForm.controlID.$touched && myForm.controlID.$invalid">The control ID is required.</span>
+                </div>
+            </div>
+            <div class="col-md-12 padding">
+                <div class="col-md-4" >Payer Tax ID:</div>
+                <div class="col-md-8" >
+                        <input type="text" name="payerTaxID" ng-model="payerTaxID" required>
+                    <span class="invalid" ng-show="myForm.payerTaxID.$touched && myForm.payerTaxID.$invalid">The payer tax ID is required.</span>
+                </div>
+            </div>
+            <div class="col-md-12 padding">
+                <div class="col-md-4" >Employee's Ref#:</div>
+                <div class="col-md-8" ><input type="number" name="employeeref" ng-model="employeeref" required>
+                    <span class="invalid" ng-show="myForm.employeeref.$touched && myForm.employeeref.$invalid">The Employee Ref ID  is required.</span>
+                </div>
+            </div>
+            <div class="col-md-12 padding">
+                <div class="col-md-4" >HMRC Ref#:</div>
+                <div class="col-md-8" ><input type="number" name="HRMCREF" ng-model="HRMCREF" required>
+                    <span class="invalid" ng-show="myForm.HRMCREF.$touched && myForm.HRMCREF.$invalid">The HRMC Ref ID  is required.</span>
+                </div>
+            </div>
+            <div class="col-md-12 padding">
+                <div class="col-md-4" >Accts Office Ref#:</div>
+                <div class="col-md-8" ><input type="number" name="accountsofficenum" ng-model="accountsofficenum" required ng-pattern="/^[0-9]{1,8}$/">
+                    <span class="invalid" ng-show="myForm.accountsofficenum.$touched && myForm.accountsofficenum.$invalid">The Accounts office number  is required.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-primary" >Save</button>
+    </div>
+</form>
+</div>

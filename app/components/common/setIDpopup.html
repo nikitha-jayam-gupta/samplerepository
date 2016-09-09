@@ -1,0 +1,28 @@
+
+<div class=" fade" id="myModal" ng-hide="hideDialog" role="dialog" ng-controller="calendarCtrl">
+    <div class="">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="close()">&times;</button>
+                <h4 class="modal-title">Look up SetID</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                    <th>SetID</th>
+                    <th>Description</th>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="id in setidData">
+                        <td><a ng-click="modalClick($event, id.setID)"  data-dismiss="modal">{{id.setID}} </a></td>
+                        <td>{{id.Description}} </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

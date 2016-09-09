@@ -1,0 +1,88 @@
+<div class="VoucherCls" ng-controller="paymentsInquiryctrl">
+    <h2>Withhold Payment Inquiry </h2>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Search</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 toppadCls">
+                <div class="col-md-4"><label>Vendor SetID:</label><input type="text" size="05" ng-model="vsetID"> </div>
+                <div class="col-md-4"><label>From Vendor ID:</label><input type="text" size="05" ng-model="vID"></div>
+                <div class="col-md-4"><label>From Vendor Name:</label><input type="text" size="10" ng-model="vName"></div>
+            </div>
+            <div class="col-md-12 toppadCls">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><label>To Vendor ID:</label><input type="text" size="05" ng-model="tvendorID"></div>
+                <div class="col-md-4"><label>To Vendor Name:</label><input type="text" size="10" ng-model="tvendorName"></div>
+            </div>
+            <div class="col-md-12 toppadCls hrCls">
+                <div class="col-md-4"><label>From Date:</label><input type="date" ng-model="fDate "></div>
+                <div class="col-md-4"><label>To Date:</label><input type="date" ng-model="tDate"></div>
+            </div>
+        </div>
+    </div>
+    <div class="leftDiv">
+            <button class="btn btn-primary">Search</button>
+            <button class="btn btn-primary" ng-click="resetSearch()" ng-disabled>Reset Criteria</button>
+    </div><br><br>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Payment Details</h3>
+        </div>
+        <div class="panel-body" ng-init="onloadData()">
+            <div class="col-md-12 toppadCls">
+                <div class="col-md-4"><label>SetID:</label><span>{{paymentsInquiryData.bUnit}}</span></div>
+                <div class="col-md-4"><label>Vendor ID:</label></div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4"><label>Pay Method :</label></div>
+                <div class="col-md-4"><label>Payment Ref:</label> </div>
+                <div class="col-md-4"><label>Schedule ID:</label> </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4"><label>Payment Amount:</label></div>
+                <div class="col-md-4 labelCls"><label>Vendor Liability Amount Paid:</label></div>
+            </div>
+            <br><br><br><br><br>
+            <div class="panel panel-default addSpaceCls">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Withholding Details</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <th>Business Unit</th>
+                        <th>Voucher ID</th>
+                        <th>Payment Count </th>
+                        <th>Withholding Entity </th>
+                        <th>Withholding Type</th>
+                        <th>Withholding Jurisdiction</th>
+                        <th>Withholding Class</th>
+                        <th>Withholding Rule </th>
+                        <th>Payment Type</th>
+                        <th>Gross Payment Amount</th>
+                        <th>Withholding Basic Amount</th>
+                        </thead>
+                        <tbody>
+
+                        <tr ng-repeat="data in paymentsInquiryData">
+                            <td>{{data.bUnit}}</td>
+                            <td>{{data.vID}}</td>
+                            <td>{{data.paymentCount}}</td>
+                            <td>{{data.entity}}</td>
+                            <td>{{data.newType}}</td>
+                            <td>{{data.newJurCD}}</td>
+                            <td>{{data.newClass}}</td>
+                            <td>{{data.newRule}}</td>
+                            <td>{{data.newType}}</td>
+                            <td>{{data.newAmount}}</td>
+                            <td>{{data.basicAmount}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

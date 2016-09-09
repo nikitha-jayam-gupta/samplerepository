@@ -1,0 +1,16 @@
+[
+  {
+    "Year": "2015", "Period": "1",
+    "BeginDate": "01/01/2015",
+    "EndDate" : "12/31/2015",
+    "PeriodName" : "Period 1 -2015-01-01",
+    "Abbrev" : "1"
+  },
+{
+  "Year": "2015", "Period": "1",
+"BeginDate": "01/01/2015",
+"EndDate" : "12/31/2015",
+"PeriodName" : "Period 1 -2015-01-01",
+"Abbrev" : "1"
+}
+]

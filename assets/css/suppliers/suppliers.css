@@ -1,0 +1,186 @@
+
+.supplierSearchTable{
+    width : 80% !important;
+}
+
+.supplier th,.supplier td{
+    border-right:1px solid #8cb3d9;
+}
+
+/*.supplier .panel-default>.panel-heading{
+    color: #FFFFFF;
+    background-color: #8cb3d9;
+}*/
+
+.supplier .panel{
+    margin-left: 15px;
+}
+
+.supplierSummaryDiv label ,.supplierInfoDiv label{
+    padding-top: 5px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 2%;
+    width: 200px;
+}
+.middlespace{
+    margin-left: 07%;
+}
+
+.supplierInfoDiv select{
+    width: 20%;
+}
+.middlespaces{
+    margin-left: 17%;
+}
+
+.divspace{
+    margin-top: 05px;
+}
+
+.text-left
+{
+    text-align: left !important;
+}
+
+.accordion .btn-primary {
+    background-color: #8cb3d9 !important;
+    border-color: #8cb3d9 !important;
+}
+
+#slogo .btn-primary {
+    background-color: #E37222 !important;
+    border-color: #E37222 !important;
+}
+
+.accordion{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.accordionborder {
+    border-right:1px solid #8cb3d9;
+    border-left:1px solid #8cb3d9;
+    border-bottom:1px solid #8cb3d9;
+}
+#srating input{
+    margin-left: 30%;
+}
+#slogo button{
+    margin-left: 30%;
+}
+#addnumbers{
+    padding: 15px;
+    padding-left: 60px;
+}
+
+#addnumbers .panel{
+    width: 70%;
+}
+.linkdiv{
+    float:right;
+    margin-right:5px;
+}
+#duplicateinvoice .panel{
+    margin-left: 0px ! important;
+    width: 100%;
+}
+.Severitydiv {
+    margin-left: 10%;
+    width: 30%;
+    float: left;
+}
+.buttonsdiv{
+    width: 50%;
+    float:right;
+}
+#areporting{
+    padding:02%;
+}
+#areporting label {
+    width:200px;
+    text-align: right;
+}
+#areporting  input[type=checkbox]{
+    margin-left: 20%;
+}
+.checkCls{
+    margin-left: 22%;
+}
+.checkCls label{
+    padding-right: 32%;
+}
+#comments{
+    padding-left: 40px;
+}
+.labelspace{
+    padding-left: 15px;
+}
+.labelstyle{
+    margin-left: 20%;
+    padding-right: 7px;
+}
+
+.labelCls label {
+    padding-top: 5px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 2%;
+    width: 20%;
+}
+.linkdiv{
+    margin-top: -110px;
+    margin-right: 75px;
+}
+.CorporateCls label{
+    padding-top: 5px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 2%;
+    width: 20%;
+}
+.supplierInfoDiv input[type=checkbox] {
+    margin-left: 10%;
+}
+.right-buffer{
+    float: right;
+    margin-right: 2%;
+}
+.addressDiv label{
+    padding-top: 5px;
+    display: inline-block;
+    text-align: right;
+    width: 15%;
+}
+
+.addressDiv .accordion .btn-primary {
+    background-color: #8cb3d9 !important;
+    border-color: #8cb3d9 !important;
+}
+.addressDiv .accordion .panel-default{
+    padding: 2%;
+}
+.addressDiv .accordion .panel-body {
+    border-right:1px solid #8cb3d9;
+    border-left:1px solid #8cb3d9;
+    border-bottom:1px solid #8cb3d9;
+}
+.payCls label{
+    padding-top: 5px;
+    display: inline-block;
+    text-align: right;
+    width: 40%;
+    padding-right: 2%;
+}
+.addressDiv .panel{
+    margin-right: 2%;
+}
+.supplierfieldCls label{
+    width: 20%;
+    padding-right: 1%;
+}
+.verticalCls{
+    width: 75%;
+    margin-left: 2%;
+    border-top:1px solid #979292;
+}

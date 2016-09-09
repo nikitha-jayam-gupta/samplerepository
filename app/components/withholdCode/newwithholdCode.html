@@ -1,0 +1,61 @@
+
+<h2>Withhold Code</h2>
+<div class="withholdingDiv">
+    <div>
+        <label>Set ID</label><span><input type="text" value="{{data.setID}}"></span>
+    </div>
+    <div>
+        <label>Code</label><span><input type="text" value="{{data.WithholdCode}}"></span>
+    </div>
+    <div>
+        <label>Description:</label><input type="text" value="{{data.Description}}">
+    </div>
+</div>
+<br>
+<div class="panel panel-default">
+    <div class="panel-body">
+                <table class="table">
+                    <thead>
+                    <th>Entity</th>
+                    <th>Type</th>
+                    <th>Withhold Type Description</th>
+                    <th>Jurisdiction</th>
+                    <th>Jurisdiction Description</th>
+                    <th>Class </th>
+                    <th>Description </th>
+                    <th></th>
+                    <th></th>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat="wData in withholdFullCode" ng-show="!newTabClicked">
+                        <td><input type="text" value="{{wData.Entity}}"> </td>
+                        <td><input type="text" value="{{wData.Type}}"> </td>
+                        <td>{{wData.WithholdDesc}}  </td>
+                        <td><input type="text" value="{{wData.Jurisdiction}}"> </td>
+                        <td>{{wData.JurDesc}}  </td>
+                        <td><input type="text" value="{{wData.Class}}"> </td>
+                        <td>{{wData.Desc}} </td>
+                        <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                        <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)" ></i></td>
+                    </tr>
+                    <tr  ng-show="newTabClicked">
+                        <td><input type="text" value="{{wData.Entity}}"> </td>
+                        <td><input type="text" value="{{wData.Type}}"> </td>
+                        <td>{{wData.WithholdDesc}}  </td>
+                        <td><input type="text" value="{{wData.Jurisdiction}}"> </td>
+                        <td>{{wData.JurDesc}}  </td>
+                        <td><input type="text" value="{{wData.Class}}"> </td>
+                        <td>{{wData.Desc}} </td>
+                        <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                        <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)" ></i></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+ </div>
+<div class="rightDiv">
+    <button class="btn btn-primary"><i class="glyphicon glyphicon-open-file"></i>  Save </button>
+    <button class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i>  Clear</button>
+    <button class="btn btn-primary" ng-click="withholdClick('')" ng-if="!newTabClicked">Return To Search</button>
+</div>

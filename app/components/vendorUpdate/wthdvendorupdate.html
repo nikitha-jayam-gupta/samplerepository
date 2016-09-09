@@ -1,0 +1,93 @@
+<div class="vendorCategory" ng-controller="vendorupdatectrl">
+    <h2>Withholding Vendor Update</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">withholding Update ID</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-8">
+                <div class="col-md-4">Withholding Update ID: </div>
+                <div class="col-md-2">WH_2014</div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Vendor Selection</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-8">
+                <div class="col-md-4">Vendor SetID: </div>
+                <div class="col-md-5"><input type="text" value="HU001"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Tax Reporting Year</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="col-md-6"><span class="periodslabel"></span> Start Date: </div>
+                    <div class="col-md-6"><input type="date" value="01/01/2015">
+                        </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-6"><span class="periodslabel"></span>  End Date: </div>
+                    <div class="col-md-6"><input type="date" value="01/01/2015">  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Details</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                <th>Vendor ID</th>
+                <th>Location</th>
+                <th>New Withhold</th>
+                <th>Entity </th>
+                <th>New Type </th>
+                <th>New Jur CD</th>
+                <th>New Class</th>
+                <th>Criteria</th>
+                <th> </th>
+                <th></th>
+                </thead>
+                <tbody>
+
+                <tr ng-repeat="d1 in vendorupdateData">
+                    <td>{{d1.vendorId}} </td>
+                    <td>{{d1.location}} </td>
+                    <td>{{d1.newWithhold}}</td>
+                    <td>{{d1.entity}}</td>
+                    <td>{{d1.newType}} </td>
+                    <td>{{d1.newJurCD}}</td>
+                    <td>{{d1.newClass}} </td>
+                    <td>{{d1.criteria}}</td>
+                    <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                    <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)"></i></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+      <!--  <div class="leftDiv">
+            <button class="btn btn-primary" ng-click="save()"><i class="glyphicon glyphicon-floppy-save"></i>  Save </button>
+            <button class="btn btn-primary"><i class="glyphicon glyphicon-search"></i>  Return to search </button>
+            <button class="btn btn-primary"><i class="glyphicon glyphicon-list"></i>  Previous in List </button>
+            <button class="btn btn-primary"><i class="glyphicon glyphicon-list"></i>  Next in List </button>
+            <button class="btn btn-primary"><i class="glyphicon glyphicon-envelope"></i>  Notify </button>
+        </div>-->
+        <div class="rightDiv">
+            <button class="btn btn-primary"><i class="glyphicon glyphicon-floppy-save"></i>  Save </button>
+            <button class="btn btn-primary"><!--<i class="glyphicon glyphicon-edit"></i>-->  Clear </button>
+        </div>
+
+    </div>
+</div>

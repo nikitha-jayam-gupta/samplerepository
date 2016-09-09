@@ -1,0 +1,20 @@
+[
+  {"setID": "SHARE",
+    "Description": "CORPORATE SETID"
+  },
+  {"setID": "SHR01",
+    "Description": "Outdoor Equipment"
+  },
+  {"setID": "SHR02",
+    "Description": "Consumer Products"
+  },
+  {"setID": "SHR03",
+    "Description": "Health Care"
+  },
+  {"setID": "SHR04",
+    "Description": "Automotive"
+  }
+]
+
+
+

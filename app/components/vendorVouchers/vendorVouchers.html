@@ -1,0 +1,59 @@
+<div class="VoucherCls vendorCls" ng-controller="vendorVouchersctrl">
+    <h2>Vouchers By Vendor</h2>
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Vendor</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 postCls">
+                <div class="col-md-4"><label>SetID:</label><span>HU001</span></div>
+                <div class="col-md-5"><label>Vendor ID:</label><span>0000030619 Afi J Kumaka</span></div>
+                <div class="col-md-3"><label>Location:</label><span>REMIT</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Payment</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 postCls">
+                <div class="col-md-4"><label>Start Date:</label><input type="date"></div>
+                <div class="col-md-5"><label>End Date:</label><input type="date"></div>
+                <div class="col-md-3"><button class="btn btn-primary">Search </button></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default addSpaceCls">
+        <div class="panel-heading">
+            <h3 class="panel-title">Withholding Transactions</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                <th>Business Unit</th>
+                <th>Voucher ID</th>
+                <th>Invoice Number</th>
+                <th>Invoice Date</th>
+                <th>Entity</th>
+                <th>Type</th>
+                <th>Jurisdiction</th>
+                </thead>
+                <tbody>
+                <tr ng-repeat="data in vendorVouchersData">
+                    <td>{{data.bUnit}}</td>
+                    <td>{{data.vID}}</td>
+                    <td>{{data.invoiceNumber}}</td>
+                    <td>{{data.invoiceDate}}</td>
+                    <td>{{data.entity}}</td>
+                    <td>{{data.newType}}</td>
+                    <td>{{data.jurisdiction}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

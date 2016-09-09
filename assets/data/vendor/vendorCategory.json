@@ -1,0 +1,18 @@
+[
+  {
+    "vendorCategory" : "Hold",
+    "Description" : "Hold Payment",
+    "DefaultFlag":false
+  },
+  {
+    "vendorCategory" : "RPT",
+    "Description" : "Reporting Only",
+    "DefaultFlag":false
+  },
+  {
+    "vendorCategory" : "WTHD",
+    "Description" : "Withhold",
+    "DefaultFlag":false
+  }
+
+]

@@ -1,0 +1,234 @@
+<div class="withholding" ng-controller="withholdEntityCtrl">
+    <div class="withholdentityTab" ng-show="wihthholdVisibiliy">
+        <ul >
+            <li ng-repeat="tab in wihthholdRulesTabs"
+                ng-class="{active:isActiveTab(tab.url)}"
+                ng-click="onClickTab(tab)">{{tab.title}}</li>
+        </ul>
+        <div id="mainView">
+            <div ng-include="currentTab"></div>
+        </div>
+    </div>
+    <script type="text/ng-template" id="add.existing">
+        <div class="panel panel-default" id="searchpage" ng-if="wihthholdVisibiliy">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span class="glyphicon glyphicon-triangle-bottom"></span>&nbsp; Search Criteria</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12 top-buffer"><lable class="col-md-2">Withholding Entity:</lable>
+                    <input type="text" ng-model="searchfield"><br/>
+                </div>
+
+                <div class="left-buffer">
+                    <button class="btn btn-primary top-buffer" ng-click="totalSearch()">Search</button>
+                    <button class="btn btn-primary top-buffer" ng-click="clear()">Clear</button>
+                </div>
+                <br>
+                <br>
+                <table class="table left-buffer col-md-4 calendarsearchTable" ng-if="withholdFlag">
+                    <thead>
+                    <th> Withholding Entity</th>
+                    <th> Description</th>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat="wheData in withholdentityData | filter : {withholdingentity:searchfield}">
+                        <td><a href="" ng-click="withholdingpage()">{{wheData.withholdingentity}}</a> </td>
+                        <td><a href="" ng-click="withholdingpage()">{{wheData.Description}}</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </script>
+    <div  ng-if="!wihthholdVisibiliy">
+    <div class="withholdEntityTab1">
+        <ul >
+            <li ng-repeat="tabs in withholdEntityTabs"
+                ng-class="{active:isActiveTab(tabs.url)}"
+                ng-click="onClickTab(tabs)">{{tabs.title}}</li>
+        </ul>
+        <div id="mainView1">
+            <div ng-include="currentwTab1"></div>
+        </div>
+    </div>
+        <div>
+            <div>
+                <label>Entity:</label><span>{{wheData.withholdingentity}}</span>
+            </div>
+            <div>
+                <label>Description:</label><input type="text">
+                <label style="width:200px;">Last Report Date:</label><input type="text">
+            </div>
+        </div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Withholding Entity</h3>
+            </div>
+            <br>
+            <div class="panel-body">
+                <div>
+                    <div>
+                        <label class="periodslabel"> Effective Date:</label><input type="date" size="05">
+                        <label style="width:200px;margin-left: 34px;" class="periodslabel">Apply Withholding:</label>
+                        <select>
+                            <option>Withhold at Payment</option>
+                            <option>Withhold at Voucher Posting</option>
+                        </select><br/>
+                    </div>
+                    <div>
+                        <label class="periodslabel">Status:</label>
+                        <select style="margin-left: -4px;">
+                            <option>Actice</option>
+                            <option>Inactive</option>
+                        </select>
+                        <label style="margin-left: 180px;">File Layout:</label>
+                        <select>
+                            <option>Construction Industry Scheme</option>
+                            <option>Italy Model 770</option>
+                            <option>Spain 190</option>
+                            <option>US 1099 Misc</option>
+                        </select><br/>
+                    </div>
+                    <div>
+                        <label class="periodslabel"> Current Code:</label><input type="text" size="05">
+                        <label style="width:150px;margin-left: 167px;" class="periodslabel">Rounded Option:</label>
+                        <select>
+                            <option>Natural Round</option>
+                            <option>Nearest Rupee Rounding</option>
+                            <option>Round Down</option>
+                            <option>Round Up</option>
+                            <option>TDS Withholding</option>
+                        </select><br/>
+                    </div>
+                    <div>
+                        <label class="periodslabel" style="margin-left: 441px;"> Rate Type:</label><input type="text"  value="CRRNT" size="05" style="margin-left: 4px;">
+                    </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Withholding Supplier</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div ng-controller="employeeCtrl">
+                            <table id="vendortable" style="width:100%;">
+                                <thead>
+                                <th style="width:3%">    </th>
+                                <th style="width:10%" class="periodslabel">setID</th>
+                                <th style="width:10%">setID Name</th>
+                                <th style="width:10%" class="periodslabel">Vendor</th>
+                                <th style="width:10%">Name</th>
+                                <th style="width:10%" class="periodslabel">Location</th>
+                                <th style="width:10%">Descr</th>
+                                <th style="width:10%" class="periodslabel">Address</th>
+                                <th style="width:3%">  </th>
+                                <th style="width:3%">   </th>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="x in names ">
+                                    <td>{{$index + 1}}</td>
+                                    <td><input name="setid" ng-model="x.setid" size="10" value="{{x.setid}}" init-from-form /></td>
+                                    <td>{{ x.sname }}</td>
+                                    <td><input name="vendor" ng-model="x.vendor" size="10" value="{{ x.vendor }}" init-from-form /></td>
+                                    <td>{{ x.name }}</td>
+                                    <td><input name="location" ng-model="x.location" size="10" value="{{ x.location }}" init-from-form /></i></td>
+                                    <td>{{ x.description }}</td>
+                                    <td><input name="Address" ng-model="x.Address" size="10" value="{{ x.Address }}" init-from-form /></td>
+                                    <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                                    <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)"></i></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Withholding Class</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            <div id="firstcolumn">
+                                <label class="periodslabel"> Type:</label><br/>
+                                <input type="text" size="05" style="margin-left: 90px;">
+
+                            </div>
+                            <div id="secondcolumn" >
+                                <label class="periodslabel">Jurisdiction:</label><br>
+                                <input type="text" size="05" style="margin-left: 47px;">
+
+                            </div>
+                            <div id="thirdcolumn">
+                                <label class="periodslabel"> Class:</label><br>
+                                <input type="text" size="05" style="margin-left: 83px;">
+                            </div>
+                            <div id="fourthcolumn">
+                                <a href="">Misc. Setup</a>
+                            </div>
+                            <div id="fifthcolumn">
+                                <label class="periodslabel" style="padding-left: 0px;"> Min Amt to Rpt:</label><input type="text">
+                            </div>
+                        </div><br/><br/>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Withholding Categories</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="withholdEntityTab1" id="tabs1" ng-controller="TabsCls">
+                                    <ul>
+                                        <li ng-repeat="tab in tabs"
+                                            ng-class="{active:isActiveTab(tab.url)}"
+                                            ng-click="onClickTab(tab)">{{tab.title}}</li>
+                                    </ul>
+                                    <div id="tableView">
+                                        <div ng-include="currentTab"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="left-buffer">
+            <button class="btn btn-primary top-buffer" ng-click="returntoSearch()"> Return to Search</button>
+        </div><br>
+    </div>
+    <script type="text/ng-template" id="add.subtab">
+        <div ng-controller="categoryCtrl">
+            <table id="vendortable" style="width:100%;">
+                <thead>
+                <th style="width:15%">Business Unit Category</th>
+                <th style="width:15%">Vendor Category</th>
+                <th style="width:15%">Create Withholding Payment</th>
+                <th style="width:15%">WithHolding Rule</th>
+                <th style="width:20%">Description</th>
+                <th style="width:10%">Hold Payment</th>
+                <th style="width:5%">  </th>
+                <th style="width:5%">   </th>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in names ">
+                    <td><input name="unitcategory" ng-model="x.unitcategory" size="10" value="{{x.unitcategory}}" init-from-form /></td>
+                    <td><input name="vendorcategory" ng-model="x.vendorcategory" size="10" value="{{ x.vendorcategory }}" init-from-form/></td>
+                    <td><center><input type="checkbox"></center></td>
+                    <td><input name="withholdingrule" size="10" ng-model="x.withholdingrule" value="{{ x.withholdingrule }}" init-from-form/></td>
+                    <td>{{ x.description }}</td>
+                    <td><select><option>{{x.holdpayment[0]}}</option></select></td>
+                    <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                    <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)"></i></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="add.info">
+        <div id="viewTwo">
+        </div>
+    </script>
+</div>

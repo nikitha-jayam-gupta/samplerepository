@@ -1,0 +1,80 @@
+<div class="postwithHolding" ng-controller="postwithholdingctrl">
+    <div id="vendorTabs" ng-hide="toggleDiv">
+        <ul>
+            <li ng-repeat="tab in vendorTabs"
+                ng-class="{active:isActiveTab(tab.url)}"
+                ng-click="onClickTab(tab)">{{tab.title}}</li>
+        </ul>
+        <div id="mainView">
+            <div ng-include="currentTab"></div>
+        </div>
+    </div>
+    <script type="text/ng-template" id="add.existing" >
+        <div class="panel panel-default" >
+            <div class="panel-heading">
+                <h3 class="panel-title"><span class="glyphicon glyphicon-triangle-bottom"></span>&nbsp; Search Criteria</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12 top-buffer"><lable class="col-md-2">Run Control ID:</lable><input class="col-md-2" ng-model="paymentSearch" type="text">  <i class="glyphicon glyphicon-search" ng-click="searchSetid()"></i> </div>
+
+                <div class="left-buffer">
+                    <button class="btn btn-primary top-buffer" ng-click="totalSearch()">Search</button>
+                    <button class="btn btn-primary top-buffer" ng-click="clear()">Clear</button>
+                </div>
+                <br>
+                <br>
+                <table class="table left-buffer col-md-4 calendarsearchTable" ng-if="paymentTable">
+                    <thead>
+                    <th> Run Control ID</th>
+                    <th> Language Code</th>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat="vData in postWithholdingData | filter : {controlID:paymentSearch}">
+                        <td><a ng-click="postwitholdingrClick(vData)">{{vData.controlID}}</a> </td>
+                        <td>{{vData.languageCode}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </script>
+    <div ng-show="toggleDiv">
+        <h2>Withhold Sent</h2>
+        <br>
+        <div class="vendorCategoryDiv">
+            <div class="reportCls">
+                <label>Run Control ID:</label><span>{{vData.controlID}}</span>
+                <a href="">Report Manager</a>
+                <a href="">Process Monitor</a>
+                <button class="btn btn-primary rightbuffer" ng-click="run()">Run</button>
+            </div>
+        </div>
+        <br><br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">Details</div>
+            </div>
+            <div class="panel-body"><br>
+                <div class="postwithholddata">
+                    <div>
+                        <label>Request ID</label><input type="text" size="05">
+                        &nbsp;&nbsp;&nbsp;<input type="text" size="30">
+                    </div>
+                    <div><label>Process Frequency</label>
+                        <select>
+                            <option>Always</option>
+                            <option>Don't</option>
+                            <option>Once</option>
+                        </select>
+                    </div>
+                    <div><label>Report ID</label><span>US_REPORT</span></div>
+                    <div><label>SetID</label><input type="text" size="05"> </div>
+                    <div><label>Control ID</label><input type="text" size="10"> </div><br>
+                </div>
+            </div>
+        </div>
+             <button class="btn btn-primary" ng-click="save()">Save</button>
+        &nbsp;&nbsp;&nbsp;<button class="btn btn-primary" ng-click="returnSearch()">Return to Search</button>
+    </div>
+</div>

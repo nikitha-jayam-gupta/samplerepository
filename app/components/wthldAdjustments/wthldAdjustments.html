@@ -1,0 +1,62 @@
+<div class="VoucherCls" ng-controller="wthldAdjustmentsCtrl">
+    <h2>Withhold Adjustments</h2>
+
+    <div class="col-md-12">
+        <div class="col-md-4"><label>Vendor:</label><span></span></div>
+    </div>
+    <br><br>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Search Criteria</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12 toppadCls">
+                <div class="col-md-4"><label>Business Unit:</label><input type="text" size="05"> </div>
+            </div>
+            <div class="col-md-12 toppadCls">
+                <div class="col-md-4"><label>Entity:</label><input type="text" size="05"> </div>
+                <div class="col-md-4"><label>Type:</label><input type="text" size="05"></div>
+                <div class="col-md-4"><label>Start Date:</label><input type="date"> </div>
+            </div>
+            <div class="col-md-12 toppadCls hrCls">
+                <div class="col-md-4"><label>Jurisdiction:</label><input type="text" size="05"> </div>
+                <div class="col-md-4"><label>Class:</label><input type="test" size="05"></div>
+                <div class="col-md-4"><label>End Date:</label><input type="date"></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Adjustments</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                <th>Short Name</th>
+                <th>Business Unit</th>
+                <th>Entity</th>
+                <th>Type</th>
+                <th>Jurisdiction</th>
+                <th>Class</th>
+                <th>Rule</th>
+                <th></th>
+                <th></th>
+                </thead>
+                <tbody>
+
+                <tr ng-repeat="data in wthldAdjustmentsData">
+                    <td>{{data.sName}}</td>
+                    <td>{{data.bUnit}}</td>
+                    <td>{{data.entity}}</td>
+                    <td>{{data.newType}}</td>
+                    <td>{{data.newJurCD}}</td>
+                    <td>{{data.class}}</td>
+                    <td>{{data.rule}}</td>
+                    <td><i class="glyphicon glyphicon-plus" ng-click="addRow()"></i></td>
+                    <td><i class="glyphicon glyphicon-minus" ng-click="deleteRow($index)"></i></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

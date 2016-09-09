@@ -1,0 +1,32 @@
+[
+  {
+    "withholdingRule" : "RULE0",
+    "Description" : "Zero Percent Withholding rule"
+  },
+  {
+    "withholdingRule" : "RULE1",
+    "Description" : "1099 Standard Rule"
+  },{
+  "withholdingRule" : "RULE2",
+  "Description" : "1099 Rule for Royalties"
+},{
+  "withholdingRule" : "RULE3",
+  "Description" : "1099 Rule w/o Minimum"
+},{
+  "withholdingRule" : "SPN01",
+  "Description" : "Spanish Standard IRPF"
+},{
+  "withholdingRule" : "TEST",
+  "Description" : "100 testing"
+},{
+  "withholdingRule" : "WCT1",
+  "Description" : "Works Contract Rule 2%"
+}
+]
+
+
+
+
+
+
+
